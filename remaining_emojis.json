@@ -1,0 +1,50 @@
+[
+  {
+    "file": "about.html",
+    "line": 413,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  },
+  {
+    "file": "certifications.html",
+    "line": 282,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  },
+  {
+    "file": "contact.html",
+    "line": 274,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  },
+  {
+    "file": "experience.html",
+    "line": 249,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  },
+  {
+    "file": "index.html",
+    "line": 458,
+    "emojis": "©",
+    "context": "<span>© 2025 Mohammed Junaid.</span>"
+  },
+  {
+    "file": "projects.html",
+    "line": 291,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  },
+  {
+    "file": "resume.html",
+    "line": 376,
+    "emojis": "©",
+    "context": "<span>© 2025 Mohammed Junaid.</span>"
+  },
+  {
+    "file": "testimonials.html",
+    "line": 292,
+    "emojis": "©",
+    "context": "<div class=\"footer-bottom\"><span>© 2025 Mohammed Junaid.</span><span>Built with <i data-lucide=\"heart\" style=\"width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;\"></i> &amp; data</span></div>"
+  }
+]
