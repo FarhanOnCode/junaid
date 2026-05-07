@@ -156,6 +156,7 @@
       "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
     }
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -207,8 +208,8 @@
         </div>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
           <span class="brand-pill">📍 Hyderabad, India</span>
-          <span class="brand-pill">🎓 Digital Marketing</span>
-          <span class="brand-pill">🚀 Growth Hacker</span>
+          <span class="brand-pill"><i data-lucide="graduation-cap" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Digital Marketing</span>
+          <span class="brand-pill"><i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Growth Hacker</span>
         </div>
       </div>
 
@@ -292,11 +293,11 @@
       <h2 class="section-title">What Drives Me <span class="gradient-text">Every Day</span></h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;">
-      <div class="value-card reveal" data-delay="0"><div class="value-icon">📊</div><div class="value-title">Data First</div><div class="value-text">Every decision is backed by real data, not gut feeling alone.</div></div>
-      <div class="value-card reveal" data-delay="0.1"><div class="value-icon">🎨</div><div class="value-title">Creative Boldness</div><div class="value-text">Bold ideas that stand out in a crowded digital landscape.</div></div>
+      <div class="value-card reveal" data-delay="0"><div class="value-icon"><i data-lucide="bar-chart-2" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div><div class="value-title">Data First</div><div class="value-text">Every decision is backed by real data, not gut feeling alone.</div></div>
+      <div class="value-card reveal" data-delay="0.1"><div class="value-icon"><i data-lucide="palette" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div><div class="value-title">Creative Boldness</div><div class="value-text">Bold ideas that stand out in a crowded digital landscape.</div></div>
       <div class="value-card reveal" data-delay="0.2"><div class="value-icon">🔁</div><div class="value-title">Continuous Learning</div><div class="value-text">The digital world evolves — so do I, every single day.</div></div>
       <div class="value-card reveal" data-delay="0.3"><div class="value-icon">🤝</div><div class="value-title">Client Success</div><div class="value-text">Your wins are my wins. I'm invested in your growth journey.</div></div>
-      <div class="value-card reveal" data-delay="0.4"><div class="value-icon">⚡</div><div class="value-title">Speed + Quality</div><div class="value-text">Fast execution without compromising on quality or strategy.</div></div>
+      <div class="value-card reveal" data-delay="0.4"><div class="value-icon"><i data-lucide="zap" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div><div class="value-title">Speed + Quality</div><div class="value-text">Fast execution without compromising on quality or strategy.</div></div>
     </div>
   </div>
 </section>
@@ -411,7 +412,7 @@
   </div>
   <div class="footer-bottom"><span>© 2025 Mohammed Junaid.</span><span>Built with ❤️ &amp; data</span></div>
 </footer>
-<a href="contact.html" id="sticky-cta">🚀 Let's Grow Your Brand</a>
+<a href="contact.html" id="sticky-cta"><i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Let's Grow Your Brand</a>
 
 <style>
   @media(max-width:768px){
@@ -426,5 +427,6 @@
   gsap.from('#about-sub', { opacity: 0, y: 30, duration: 0.7, delay: 0.8 });
   initCardTilt('.value-card');
 </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

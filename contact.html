@@ -108,6 +108,7 @@ label{display:block;font-size:.75rem;font-weight:600;color:var(--text-muted);mar
       "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
     }
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 <div id="page-loader"><div style="text-align:center;"><div class="loader-ring" style="margin:0 auto 1rem;"></div><p style="font-size:.75rem;color:var(--text-muted);letter-spacing:2px;">LOADING</p></div></div>
@@ -184,8 +185,8 @@ label{display:block;font-size:.75rem;font-weight:600;color:var(--text-muted);mar
               <label for="message">Your Message</label>
               <textarea id="message" class="contact-input" rows="4" placeholder="Tell me about your brand, goals, and what you'd like to achieve..."></textarea>
             </div>
-            <button type="submit" class="contact-btn" id="submit-btn">🚀 Send Message</button>
-            <div class="success-msg" id="success-msg">✅ Message sent! I'll get back to you within 24 hours.</div>
+            <button type="submit" class="contact-btn" id="submit-btn"><i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Send Message</button>
+            <div class="success-msg" id="success-msg"><i data-lucide="check-circle-2" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Message sent! I'll get back to you within 24 hours.</div>
           </form>
         </div>
       </div>
@@ -194,7 +195,7 @@ label{display:block;font-size:.75rem;font-weight:600;color:var(--text-muted);mar
       <div>
         <!-- Quick Actions -->
         <div class="reveal" style="margin-bottom:1.5rem;">
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">⚡ Quick Connect</h3>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;"><i data-lucide="zap" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Quick Connect</h3>
           <div style="display:flex;flex-direction:column;gap:.75rem;">
             <a href="tel:+919000089105" class="quick-contact-btn" style="border-color:rgba(34,197,94,.3);"><span style="font-size:1.5rem;">📞</span><div><div style="font-size:.75rem;color:var(--text-muted);">Call Directly</div><div>+91 90000 89105</div></div></a>
             <a href="https://wa.me/919000089105?text=Hi%20Junaid%2C%20I%20found%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!" target="_blank" class="quick-contact-btn" style="border-color:rgba(37,211,102,.3);"><span style="font-size:1.5rem;">💬</span><div><div style="font-size:.75rem;color:var(--text-muted);">WhatsApp Chat</div><div>Message on WhatsApp</div></div></a>
@@ -214,11 +215,11 @@ label{display:block;font-size:.75rem;font-weight:600;color:var(--text-muted);mar
             <div><div class="info-label">Availability</div><div class="info-value">Mon–Sat, 10AM–7PM IST</div></div>
           </div>
           <div class="info-item">
-            <div class="info-icon">⚡</div>
+            <div class="info-icon"><i data-lucide="zap" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div>
             <div><div class="info-label">Response Time</div><div class="info-value">Usually within 2–4 hours</div></div>
           </div>
           <div class="info-item">
-            <div class="info-icon">🌐</div>
+            <div class="info-icon"><i data-lucide="globe" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div>
             <div><div class="info-label">Languages</div><div class="info-value">English, Urdu, Hindi</div></div>
           </div>
         </div>
@@ -243,7 +244,7 @@ label{display:block;font-size:.75rem;font-weight:600;color:var(--text-muted);mar
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;max-width:900px;margin:0 auto;">
         <div class="glass-card" style="padding:1.5rem;">
-          <div style="font-size:.875rem;font-weight:700;margin-bottom:.5rem;">💰 What's your typical budget range?</div>
+          <div style="font-size:.875rem;font-weight:700;margin-bottom:.5rem;"><i data-lucide="dollar-sign" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> What's your typical budget range?</div>
           <p style="font-size:.8rem;color:var(--text-muted);line-height:1.6;">I work with ad budgets starting at ₹30K/month. My management fees are discussed based on scope and campaign complexity.</p>
         </div>
         <div class="glass-card" style="padding:1.5rem;">
@@ -284,13 +285,14 @@ function handleSubmit(e) {
   btn.textContent = '⏳ Sending...';
   btn.disabled = true;
   setTimeout(() => {
-    btn.textContent = '✅ Sent!';
+    btn.textContent = '<i data-lucide="check-circle-2" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Sent!';
     document.getElementById('success-msg').style.display = 'block';
     gsap.from('#success-msg',{opacity:0,y:10,duration:.4});
     document.getElementById('contact-form').reset();
-    setTimeout(()=>{btn.textContent='🚀 Send Message';btn.disabled=false;document.getElementById('success-msg').style.display='none';},5000);
+    setTimeout(()=>{btn.textContent='<i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Send Message';btn.disabled=false;document.getElementById('success-msg').style.display='none';},5000);
   }, 1500);
 }
 </script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
