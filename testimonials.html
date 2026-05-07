@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Testimonials | Mohammed Junaid — Client Reviews & Success Stories</title>
+<meta name="description" content="Read what clients say about Mohammed Junaid. 4.9★ average rating, 30+ happy clients, 100% recommend rate. Real results from real brands across India." />
+<link rel="stylesheet" href="shared.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<style>
+/* Carousel */
+.carousel-wrap{position:relative;overflow:hidden;border-radius:24px;}
+.carousel-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.carousel-slide{min-width:100%;padding:0 .5rem;}
+.t-card{background:var(--bg-card);border:1px solid var(--border-glass);border-radius:20px;padding:2.25rem;position:relative;}
+.t-quote{font-size:3rem;color:var(--neon-purple);opacity:.3;position:absolute;top:1rem;left:1.5rem;line-height:1;}
+.t-text{font-size:.95rem;color:var(--text-primary);line-height:1.8;margin-bottom:1.5rem;position:relative;z-index:1;}
+.t-author{display:flex;align-items:center;gap:.75rem;}
+.t-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;flex-shrink:0;}
+.t-name{font-size:.9rem;font-weight:700;}
+.t-role{font-size:.75rem;color:var(--text-muted);}
+.stars{color:#f59e0b;font-size:.9rem;letter-spacing:1px;}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.3);color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .2s;z-index:10;}
+.carousel-btn:hover{background:rgba(168,85,247,.35);transform:translateY(-50%) scale(1.1);}
+.carousel-btn.prev{left:-1.25rem;}
+.carousel-btn.next{right:-1.25rem;}
+/* Chat style */
+.chat-bubble{padding:1rem 1.25rem;border-radius:18px;max-width:85%;font-size:.875rem;line-height:1.7;position:relative;margin-bottom:1rem;}
+.chat-from-client{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);border-bottom-left-radius:4px;margin-right:auto;}
+.chat-from-me{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-bottom-right-radius:4px;margin-left:auto;text-align:right;}
+/* Floating cards grid */
+.float-t-card{background:var(--bg-card);border:1px solid var(--border-glass);border-radius:18px;padding:1.5rem;transition:transform .3s,box-shadow .3s;}
+.float-t-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(168,85,247,.12);}
+</style>
+  <!-- ═══════════════════════════════════════
+       SEO META TAGS
+  ═══════════════════════════════════════ -->
+  <!-- Primary Meta -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Mohammed Junaid" />
+  <meta name="keywords" content="Mohammed Junaid reviews, digital marketing client testimonials, Google Ads reviews, SEO success stories, marketing agency reviews Hyderabad" />
+  <link rel="canonical" href="https://mohammedjunaid.in/testimonials.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohammedjunaid.in/testimonials.html" />
+  <meta property="og:title" content="Testimonials | Mohammed Junaid — Client Reviews & Success Stories" />
+  <meta property="og:description" content="Read what clients say about Mohammed Junaid. 4.9★ average rating, 30+ happy clients, 100% recommend rate. Real results from real brands across India." />
+  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MohammedJunaid" />
+  <meta name="twitter:creator" content="@MohammedJunaid" />
+  <meta name="twitter:title" content="Testimonials | Mohammed Junaid — Client Reviews & Success Stories" />
+  <meta name="twitter:description" content="Read what clients say about Mohammed Junaid. 4.9★ average rating, 30+ happy clients, 100% recommend rate. Real results from real brands across India." />
+  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Testimonials | Mohammed Junaid — Client Reviews & Success Stories",
+    "description": "Read what clients say about Mohammed Junaid. 4.9★ average rating, 30+ happy clients, 100% recommend rate. Real results from real brands across India.",
+    "url": "https://mohammedjunaid.in/testimonials.html",
+    "author": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  </script>
+</head>
+<body>
+<div id="page-loader"><div style="text-align:center;"><div class="loader-ring" style="margin:0 auto 1rem;"></div><p style="font-size:.75rem;color:var(--text-muted);letter-spacing:2px;">LOADING</p></div></div>
+<div id="transition-overlay"></div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-short">MJ</span><span class="logo-full"><span class="lc">M</span><span class="lc">o</span><span class="lc">h</span><span class="lc">a</span><span class="lc">m</span><span class="lc">m</span><span class="lc">e</span><span class="lc">d</span><span class="logo-space"></span><span class="lc">J</span><span class="lc">u</span><span class="lc">n</span><span class="lc">a</span><span class="lc">i</span><span class="lc">d</span></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a><a href="projects.html" class="nav-link">Projects</a>
+      <a href="experience.html" class="nav-link">Experience</a><a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a><a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="resume.html" class="nav-resume-btn">📄 Resume</a>
+    <button id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+    <a href="skills.html" class="nav-link">Skills</a><a href="projects.html" class="nav-link">Projects</a>
+    <a href="experience.html" class="nav-link">Experience</a><a href="certifications.html" class="nav-link">Certifications</a>
+    <a href="testimonials.html" class="nav-link">Testimonials</a><a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<section class="page-hero" style="padding:7rem 0 3rem;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(168,85,247,.12) 0%,transparent 70%);position:relative;z-index:2;">
+  <div class="section-wrap" style="text-align:center;">
+    <span class="section-tag">Social Proof</span>
+    <h1 class="section-title" id="test-h1">What Clients <span class="gradient-text">Say About Me</span></h1>
+    <p class="section-sub" style="margin:1rem auto 0;">Real words from real people who trusted me with their brands — and got real results.</p>
+    <div style="display:flex;gap:2rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;">
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:900;" class="gradient-text">4.9</div><div class="stars">★★★★★</div><div style="font-size:.75rem;color:var(--text-muted);margin-top:.25rem;">Avg. Rating</div></div>
+      <div style="width:1px;background:var(--border-glass);"></div>
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:900;" class="gradient-text">30+</div><div style="font-size:.75rem;color:var(--text-muted);margin-top:.35rem;">Happy Clients</div></div>
+      <div style="width:1px;background:var(--border-glass);"></div>
+      <div style="text-align:center;"><div style="font-size:2rem;font-weight:900;" class="gradient-text">100%</div><div style="font-size:.75rem;color:var(--text-muted);margin-top:.35rem;">Recommend Rate</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:3rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">Featured Reviews</span>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;">Client <span class="gradient-text">Spotlight</span></h2>
+
+      <!-- Carousel -->
+      <div style="position:relative;padding:0 1.5rem;">
+        <div class="carousel-wrap">
+          <div class="carousel-track" id="carousel-track">
+
+            <div class="carousel-slide">
+              <div class="t-card">
+                <div class="t-quote">"</div>
+                <p class="t-text">Junaid completely transformed our online presence. Within 3 months, our website traffic doubled and we were getting 5x more enquiries. His Google Ads expertise is unmatched — he reduced our CPC by 40% while tripling our conversions. Highly recommend!</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                  <div class="t-author">
+                    <div class="t-avatar" style="background:linear-gradient(135deg,#a78bfa,#60a5fa);color:#fff;">RA</div>
+                    <div><div class="t-name">Rahul Agarwal</div><div class="t-role">CEO, StyleKart — E-Commerce Fashion</div></div>
+                  </div>
+                  <div><div class="stars">★★★★★</div><div style="font-size:.7rem;color:var(--text-muted);text-align:right;">Verified Client</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="t-card">
+                <div class="t-quote">"</div>
+                <p class="t-text">We hired Junaid for our EdTech startup's launch campaign. He generated 1,780 leads in 4 months — we literally had to pause registrations because we ran out of seats! His funnel strategy was genius and his communication was always clear and on-time.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                  <div class="t-author">
+                    <div class="t-avatar" style="background:linear-gradient(135deg,#60a5fa,#22d3ee);color:#fff;">PK</div>
+                    <div><div class="t-name">Priya Krishnan</div><div class="t-role">Co-Founder, CodeUp Academy — EdTech</div></div>
+                  </div>
+                  <div><div class="stars">★★★★★</div><div style="font-size:.7rem;color:var(--text-muted);text-align:right;">Verified Client</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="t-card">
+                <div class="t-quote">"</div>
+                <p class="t-text">Junaid's local SEO work put our clinic at #1 on Google Maps in just 2 months. Our appointment bookings increased by 145% and our Google rating went from 3.8 to 4.8 stars. He's not just a marketer — he's a growth partner who genuinely cares about your results.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                  <div class="t-author">
+                    <div class="t-avatar" style="background:linear-gradient(135deg,#f472b6,#a78bfa);color:#fff;">DM</div>
+                    <div><div class="t-name">Dr. Mohammed Farrukh</div><div class="t-role">Director, CareFirst Multispeciality Clinic</div></div>
+                  </div>
+                  <div><div class="stars">★★★★★</div><div style="font-size:.7rem;color:var(--text-muted);text-align:right;">Verified Client</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="t-card">
+                <div class="t-quote">"</div>
+                <p class="t-text">What sets Junaid apart is his ability to combine creativity with cold hard data. Every decision he makes is backed by analytics, yet his ads feel authentic and human. Our SaaS product went from 200 to 890 monthly signups in just one quarter. Game changer.</p>
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;">
+                  <div class="t-author">
+                    <div class="t-avatar" style="background:linear-gradient(135deg,#f59e0b,#f472b6);color:#fff;">AS</div>
+                    <div><div class="t-name">Ankit Sharma</div><div class="t-role">Product Head, FlowDesk SaaS</div></div>
+                  </div>
+                  <div><div class="stars">★★★★★</div><div style="font-size:.7rem;color:var(--text-muted);text-align:right;">Verified Client</div></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="prev-btn" onclick="moveCarousel(-1)">‹</button>
+        <button class="carousel-btn next" id="next-btn" onclick="moveCarousel(1)">›</button>
+
+        <!-- Dots -->
+        <div style="display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem;" id="carousel-dots">
+          <span class="c-dot" style="width:8px;height:8px;border-radius:50%;background:var(--neon-purple);transition:background .3s;"></span>
+          <span class="c-dot" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"></span>
+          <span class="c-dot" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"></span>
+          <span class="c-dot" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s;"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat-style testimonials -->
+    <div style="margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">DM Style</span>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;">What They <span class="gradient-text">DM'd Me</span></h2>
+      <div style="background:var(--bg-card);border:1px solid var(--border-glass);border-radius:20px;padding:1.75rem;max-width:600px;">
+        <div style="display:flex;align-items:center;gap:.75rem;padding-bottom:1rem;border-bottom:1px solid var(--border-glass);margin-bottom:1.25rem;">
+          <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#60a5fa);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:#fff;">SC</div>
+          <div><div style="font-size:.875rem;font-weight:700;">Samira Choudhary</div><div style="font-size:.72rem;color:#22c55e;">● Online — Marketing Manager</div></div>
+        </div>
+        <div class="chat-bubble chat-from-client">"Junaid honestly changed the way I think about paid ads. His breakdowns of the funnel are SO clear."</div>
+        <div class="chat-bubble chat-from-client">"We hit our Q4 revenue target 3 weeks early because of the Meta campaign he built. 🙌"</div>
+        <div class="chat-bubble chat-from-me">"That's amazing! Strategy + execution working together 💪"</div>
+        <div class="chat-bubble chat-from-client">"Can we do a retainer from next month? I'm referring you to everyone I know 😄"</div>
+        <div style="text-align:right;font-size:.7rem;color:var(--text-muted);margin-top:.5rem;">Read ✓✓</div>
+      </div>
+    </div>
+
+    <!-- Floating cards grid -->
+    <div class="reveal">
+      <span class="section-tag">More Reviews</span>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:1.5rem;">More <span class="gradient-text">Happy Clients</span></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;">
+
+        <div class="float-t-card">
+          <div class="stars" style="margin-bottom:.75rem;">★★★★★</div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">"Incredible ROI on our Google Ads. Junaid's keyword research and negative keyword strategy saved us thousands."</p>
+          <div class="t-author"><div class="t-avatar" style="width:36px;height:36px;background:linear-gradient(135deg,#22d3ee,#60a5fa);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#fff;flex-shrink:0;">VR</div><div><div class="t-name" style="font-size:.8rem;">Vikram Rao</div><div class="t-role">Local Business Owner</div></div></div>
+        </div>
+
+        <div class="float-t-card">
+          <div class="stars" style="margin-bottom:.75rem;">★★★★★</div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">"Our Instagram went from 800 to 12K followers organically in 90 days. The content strategy was perfect."</p>
+          <div class="t-author"><div class="t-avatar" style="width:36px;height:36px;background:linear-gradient(135deg,#f472b6,#f59e0b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#fff;flex-shrink:0;">NF</div><div><div class="t-name" style="font-size:.8rem;">Nadia Farooq</div><div class="t-role">Founder, Bloom Skincare</div></div></div>
+        </div>
+
+        <div class="float-t-card">
+          <div class="stars" style="margin-bottom:.75rem;">★★★★★</div>
+          <p style="font-size:.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:1rem;">"Best investment we made this year. Email open rates went from 14% to 38%. Absolutely stellar work."</p>
+          <div class="t-author"><div class="t-avatar" style="width:36px;height:36px;background:linear-gradient(135deg,#a78bfa,#f472b6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#fff;flex-shrink:0;">KP</div><div><div class="t-name" style="font-size:.8rem;">Kiran Patel</div><div class="t-role">Operations Head, TechFlow</div></div></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="nav-logo" style="font-size:1.6rem;max-width:none;overflow:visible;"><span class="logo-short" style="opacity:1;transform:none;font-size:1.6rem;">MJ</span></a><p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p><div class="footer-social" style="margin-top:1.25rem;"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">𝕏</a><a href="https://wa.me/917780408840" class="social-btn">wa</a></div></div>
+    <div><p class="footer-heading">Navigation</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a></div></div>
+    <div><p class="footer-heading">Contact</p><div class="footer-links"><a href="certifications.html">Certifications</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="tel:+917780408840">+91 778 040 8840</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Mohammed Junaid.</span><span>Built with ❤️ &amp; data</span></div>
+</footer>
+<a href="contact.html" id="sticky-cta">🚀 Let's Grow Your Brand</a>
+
+<script src="shared.js"></script>
+<script>
+gsap.from('#test-h1',{opacity:0,y:50,duration:.9,delay:.5,ease:'power3.out'});
+
+let current = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.c-dot');
+const track = document.getElementById('carousel-track');
+
+function moveCarousel(dir) {
+  current = (current + dir + slides.length) % slides.length;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d,i) => d.style.background = i===current ? 'var(--neon-purple)' : 'rgba(255,255,255,.2)');
+}
+
+// Auto-play
+setInterval(() => moveCarousel(1), 5000);
+</script>
+</body>
+</html>

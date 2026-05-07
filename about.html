@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Mohammed Junaid | Digital Marketing Specialist Hyderabad</title>
+  <meta name="description" content="Learn about Mohammed Junaid — a passionate digital marketing specialist from Hyderabad driven by data, creativity and measurable results. Apprentice, freelancer, growth hacker." />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    /* Timeline */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--neon-purple), var(--neon-blue), transparent);
+    }
+    .timeline-item { position: relative; margin-bottom: 2.5rem; }
+    .timeline-dot {
+      position: absolute; left: -2.4rem; top: 0.35rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--neon-purple);
+      box-shadow: 0 0 12px rgba(168,85,247,0.7);
+    }
+    .timeline-year {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+      color: var(--neon-purple); text-transform: uppercase; margin-bottom: 0.3rem;
+    }
+    .timeline-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .timeline-sub { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Profile ring */
+    .profile-ring {
+      position: relative; display: inline-block;
+    }
+    .profile-ring::before {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--neon-purple), var(--neon-blue), var(--neon-pink), var(--neon-purple));
+      animation: spinRing 6s linear infinite;
+      z-index: 0;
+    }
+    .profile-ring::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      background: var(--bg-dark);
+      z-index: 0;
+      margin: 3px;
+    }
+    @keyframes spinRing { to { transform: rotate(360deg); } }
+    .profile-ring img { position: relative; z-index: 1; border-radius: 50%; object-fit: cover; }
+
+    /* Values */
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px; padding: 1.5rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .value-card:hover { transform: translateY(-4px); border-color: rgba(168,85,247,0.3); }
+    .value-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .value-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .value-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+    .brand-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border-radius: 50px;
+      background: rgba(168,85,247,0.08);
+      border: 1px solid rgba(168,85,247,0.2);
+      font-size: 0.75rem; font-weight: 600; color: var(--text-primary);
+    }
+  </style>
+  <!-- ═══════════════════════════════════════
+       SEO META TAGS
+  ═══════════════════════════════════════ -->
+  <!-- Primary Meta -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Mohammed Junaid" />
+  <meta name="keywords" content="about Mohammed Junaid, digital marketer Hyderabad, marketing professional India, growth hacker, digital marketing apprentice" />
+  <link rel="canonical" href="https://mohammedjunaid.in/about.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://mohammedjunaid.in/about.html" />
+  <meta property="og:title" content="About Mohammed Junaid | Digital Marketing Specialist Hyderabad" />
+  <meta property="og:description" content="Learn about Mohammed Junaid — a passionate digital marketing specialist from Hyderabad driven by data, creativity and measurable results. Apprentice, freelancer, growth hacker." />
+  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MohammedJunaid" />
+  <meta name="twitter:creator" content="@MohammedJunaid" />
+  <meta name="twitter:title" content="About Mohammed Junaid | Digital Marketing Specialist Hyderabad" />
+  <meta name="twitter:description" content="Learn about Mohammed Junaid — a passionate digital marketing specialist from Hyderabad driven by data, creativity and measurable results. Apprentice, freelancer, growth hacker." />
+  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Mohammed Junaid | Digital Marketing Specialist Hyderabad",
+    "description": "Learn about Mohammed Junaid — a passionate digital marketing specialist from Hyderabad driven by data, creativity and measurable results. Apprentice, freelancer, growth hacker.",
+    "url": "https://mohammedjunaid.in/about.html",
+    "author": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  </script>
+</head>
+<body>
+
+<div id="page-loader"><div style="text-align:center;"><div class="loader-ring" style="margin:0 auto 1rem;"></div><p style="font-size:0.75rem;color:var(--text-muted);letter-spacing:2px;">LOADING</p></div></div>
+<div id="transition-overlay"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-short">MJ</span><span class="logo-full"><span class="lc">M</span><span class="lc">o</span><span class="lc">h</span><span class="lc">a</span><span class="lc">m</span><span class="lc">m</span><span class="lc">e</span><span class="lc">d</span><span class="logo-space"></span><span class="lc">J</span><span class="lc">u</span><span class="lc">n</span><span class="lc">a</span><span class="lc">i</span><span class="lc">d</span></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="resume.html" class="nav-resume-btn">📄 Resume</a>
+    <button id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+    <a href="skills.html" class="nav-link">Skills</a><a href="projects.html" class="nav-link">Projects</a>
+    <a href="experience.html" class="nav-link">Experience</a><a href="certifications.html" class="nav-link">Certifications</a>
+    <a href="testimonials.html" class="nav-link">Testimonials</a><a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ══ -->
+<section class="page-hero" style="padding:7rem 0 4rem;background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(168,85,247,0.12) 0%, transparent 70%);position:relative;z-index:2;">
+  <div class="section-wrap" style="text-align:center;">
+    <span class="section-tag" id="about-tag">My Story</span>
+    <h1 class="section-title" id="about-h1">The Person Behind the <span class="gradient-text">Strategy</span></h1>
+    <p class="section-sub" style="margin:1rem auto 0;" id="about-sub">Passionate about the intersection of data, creativity, and human psychology — where great marketing lives.</p>
+  </div>
+</section>
+
+<!-- ══ INTRO SECTION ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:center;" class="responsive-grid">
+
+      <!-- Profile image -->
+      <div style="text-align:center;" class="reveal">
+        <div class="profile-ring" style="width:260px;height:260px;margin:0 auto 1.5rem;">
+          <img src="profile.jpeg" alt="Mohammed Junaid" width="260" height="260" style="width:260px;height:260px;margin:3px;" />
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+          <span class="brand-pill">📍 Hyderabad, India</span>
+          <span class="brand-pill">🎓 Digital Marketing</span>
+          <span class="brand-pill">🚀 Growth Hacker</span>
+        </div>
+      </div>
+
+      <!-- Story -->
+      <div class="reveal" data-delay="0.15">
+        <span class="section-tag">Who I Am</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:1.25rem;line-height:1.2;">
+          Hi, I'm <span class="gradient-text">Mohammed Junaid</span> 👋
+        </h2>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:1rem;font-size:0.95rem;">
+          I'm a Digital Marketing Enthusiast who believes that every click tells a story. 
+          Born and raised in Hyderabad, I discovered my passion for digital marketing when I realized 
+          it's the perfect blend of creative storytelling and analytical thinking.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:1rem;font-size:0.95rem;">
+          From crafting viral social media campaigns to architecting performance-driven Google Ads 
+          strategies, I bring a data-first mindset with a creative soul. I've helped brands across 
+          e-commerce, EdTech, healthcare, and local businesses achieve measurable growth.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.85;margin-bottom:2rem;font-size:0.95rem;">
+          When I'm not optimizing funnels, you'll find me experimenting with AI tools, exploring 
+          new platforms, or mentoring aspiring marketers. I believe the best campaigns are built on 
+          empathy, curiosity, and relentless iteration.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="contact.html" class="btn-primary">Let's Connect</a>
+          <a href="experience.html" class="btn-outline">My Journey →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CANDID / STORYTELLING ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;" class="responsive-grid">
+      <div class="reveal">
+        <span class="section-tag">My Philosophy</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2rem);font-weight:800;margin-bottom:1.25rem;line-height:1.2;">
+          Marketing is <span class="gradient-text">Psychology + Math</span>
+        </h2>
+        <p style="color:var(--text-muted);line-height:1.85;font-size:0.95rem;margin-bottom:1rem;">
+          I believe great digital marketing isn't about shouting louder — it's about saying the right 
+          thing to the right person at the right moment. Every campaign I build is backed by deep 
+          audience research, clear KPIs, and continuous A/B testing.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.85;font-size:0.95rem;margin-bottom:2rem;">
+          The result? Brands that don't just survive in the digital space, but genuinely thrive — 
+          building communities, driving consistent revenue, and creating lasting impact.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div style="background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.2);border-radius:12px;padding:1rem;">
+            <div style="font-size:1.6rem;font-weight:800;" class="gradient-text">50+</div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">Campaigns</div>
+          </div>
+          <div style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:1rem;">
+            <div style="font-size:1.6rem;font-weight:800;" class="gradient-text">10K+</div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">Leads Generated</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" data-delay="0.15">
+        <div style="border-radius:24px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5);position:relative;">
+          <img src="candid.jpeg" alt="Mohammed Junaid Candid" style="width:100%;height:380px;object-fit:cover;display:block;" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(2,2,8,0.6) 0%, transparent 60%);"></div>
+          <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;">
+            <span style="font-size:0.75rem;color:rgba(255,255,255,0.8);background:rgba(0,0,0,0.4);padding:0.3rem 0.75rem;border-radius:50px;backdrop-filter:blur(8px);">📸 Behind the strategy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUES ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">Core Values</span>
+      <h2 class="section-title">What Drives Me <span class="gradient-text">Every Day</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;">
+      <div class="value-card reveal" data-delay="0"><div class="value-icon">📊</div><div class="value-title">Data First</div><div class="value-text">Every decision is backed by real data, not gut feeling alone.</div></div>
+      <div class="value-card reveal" data-delay="0.1"><div class="value-icon">🎨</div><div class="value-title">Creative Boldness</div><div class="value-text">Bold ideas that stand out in a crowded digital landscape.</div></div>
+      <div class="value-card reveal" data-delay="0.2"><div class="value-icon">🔁</div><div class="value-title">Continuous Learning</div><div class="value-text">The digital world evolves — so do I, every single day.</div></div>
+      <div class="value-card reveal" data-delay="0.3"><div class="value-icon">🤝</div><div class="value-title">Client Success</div><div class="value-text">Your wins are my wins. I'm invested in your growth journey.</div></div>
+      <div class="value-card reveal" data-delay="0.4"><div class="value-icon">⚡</div><div class="value-title">Speed + Quality</div><div class="value-text">Fast execution without compromising on quality or strategy.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ JOURNEY TIMELINE ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div class="reveal">
+        <span class="section-tag">Career Journey</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:2rem;line-height:1.2;">My <span class="gradient-text">Growth Story</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2022</div>
+            <div class="timeline-title">Discovered Digital Marketing</div>
+            <div class="timeline-sub">Started self-learning SEO, content strategy, and Google Analytics. Built my first campaign for a local business.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2023</div>
+            <div class="timeline-title">First Professional Campaign</div>
+            <div class="timeline-sub">Ran Google Ads &amp; Meta Ads campaigns generating 500+ leads for an EdTech client with 3X ROAS.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <div class="timeline-title">Digital Marketing Apprenticeship</div>
+            <div class="timeline-sub">Joined a structured apprenticeship program. Led full-funnel campaigns, managed ₹5L+ ad budgets, and mentored peers.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-title">Freelance & Agency Projects</div>
+            <div class="timeline-sub">Expanded to multiple industries — e-commerce, healthcare, SaaS. Specializing in AI-powered marketing automation.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal" data-delay="0.2">
+        <span class="section-tag">Education</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:2rem;line-height:1.2;">Academic <span class="gradient-text">Foundation</span></h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--neon-blue);box-shadow:0 0 12px rgba(59,130,246,0.7);"></div>
+            <div class="timeline-year" style="color:var(--neon-blue);">Current</div>
+            <div class="timeline-title">Bachelor's Degree</div>
+            <div class="timeline-sub">Pursuing undergraduate studies with a focus on business and digital strategy.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--neon-pink);box-shadow:0 0 12px rgba(236,72,153,0.7);"></div>
+            <div class="timeline-year" style="color:var(--neon-pink);">2023</div>
+            <div class="timeline-title">Google Ads Certification</div>
+            <div class="timeline-sub">Certified in Google Search, Display, and Performance Max campaigns.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--neon-cyan);box-shadow:0 0 12px rgba(6,182,212,0.7);"></div>
+            <div class="timeline-year" style="color:var(--neon-cyan);">2023</div>
+            <div class="timeline-title">Meta Blueprint Certified</div>
+            <div class="timeline-sub">Facebook &amp; Instagram Ads certified for advanced campaign management.</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.4);">
+          <img src="incampus.jpeg" alt="Mohammed Junaid on Campus" style="width:100%;height:200px;object-fit:cover;display:block;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section style="padding:4rem 0 6rem;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div class="glass-card reveal" style="padding:3.5rem 2.5rem;text-align:center;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:0.75rem;">Want to See What I Can Do for <span class="gradient-text">Your Brand?</span></h2>
+      <p style="color:var(--text-muted);margin-bottom:1.75rem;">Let's have a quick discovery call. No fluff — just real strategies for real growth.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Book a Call 📞</a>
+        <a href="projects.html" class="btn-outline">View My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="font-size:1.6rem;max-width:none;overflow:visible;"><span class="logo-short" style="opacity:1;transform:none;font-size:1.6rem;">MJ</span></a>
+      <p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p>
+      <div class="footer-social" style="margin-top:1.25rem;">
+        <a href="#" class="social-btn" title="LinkedIn">in</a>
+        <a href="#" class="social-btn" title="Instagram">ig</a>
+        <a href="#" class="social-btn" title="Twitter">𝕏</a>
+        <a href="https://wa.me/917780408840" class="social-btn" title="WhatsApp">wa</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Navigation</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About</a>
+        <a href="skills.html">Skills</a><a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <div class="footer-links">
+        <a href="certifications.html">Certifications</a><a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a><a href="tel:+917780408840">+91 778 040 8840</a>
+        <a href="mailto:mjunaid@email.com">mjunaid@email.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Mohammed Junaid.</span><span>Built with ❤️ &amp; data</span></div>
+</footer>
+<a href="contact.html" id="sticky-cta">🚀 Let's Grow Your Brand</a>
+
+<style>
+  @media(max-width:768px){
+    .responsive-grid{grid-template-columns:1fr !important;}
+  }
+</style>
+<script src="shared.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('#about-tag', { opacity: 0, y: 30, duration: 0.7, delay: 0.5 });
+  gsap.from('#about-h1', { opacity: 0, y: 50, duration: 0.9, delay: 0.65, ease: 'power3.out' });
+  gsap.from('#about-sub', { opacity: 0, y: 30, duration: 0.7, delay: 0.8 });
+  initCardTilt('.value-card');
+</script>
+</body>
+</html>

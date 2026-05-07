@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads</title>
+  <meta name="description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Hero */
+    .hero-section {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: 5rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(168,85,247,0.18) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 20% 80%, rgba(59,130,246,0.12) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 30% at 80% 10%, rgba(236,72,153,0.1) 0%, transparent 70%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.13) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.13) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .typing-text { border-right: 2px solid var(--neon-purple); white-space: nowrap; overflow: hidden; }
+    .hero-blob {
+      width: 420px; height: 420px; border-radius: 50%;
+      background: conic-gradient(from 180deg at 50% 50%, #a78bfa 0deg, #60a5fa 120deg, #f472b6 240deg, #a78bfa 360deg);
+      filter: blur(90px); opacity: 0.18;
+      position: absolute; right: -80px; top: 50%; transform: translateY(-50%);
+      animation: blobFloat 8s ease-in-out infinite;
+    }
+    @keyframes blobFloat { 0%,100%{transform:translateY(-50%) scale(1);} 50%{transform:translateY(-55%) scale(1.07);} }
+
+    /* Stats */
+    .stat-card {
+      text-align: center; padding: 2rem;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      backdrop-filter: blur(12px);
+      position: relative; overflow: hidden;
+    }
+    .stat-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gradient-glow); opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .stat-card:hover::before { opacity: 1; }
+    .stat-number { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; letter-spacing: 0.5px; }
+
+    /* Dashboard */
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .chart-card-label {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem;
+    }
+    .chart-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+
+    /* Featured Projects */
+    .proj-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1.2rem; border-radius: 50px;
+      background: rgba(168,85,247,0.1);
+      border: 1px solid rgba(168,85,247,0.25);
+      font-size: 0.85rem; color: var(--text-primary);
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .proj-pill:hover { background: rgba(168,85,247,0.2); transform: translateY(-1px); }
+
+    /* Floating badge */
+    .floating-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1rem; border-radius: 50px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.75rem; color: var(--text-muted);
+      animation: floatBadge 3s ease-in-out infinite;
+    }
+    @keyframes floatBadge { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  </style>
+  <!-- ═══════════════════════════════════════
+       SEO META TAGS
+  ═══════════════════════════════════════ -->
+  <!-- Primary Meta -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Mohammed Junaid" />
+  <meta name="keywords" content="Mohammed Junaid, digital marketing expert Hyderabad, SEO specialist, Google Ads expert, Meta Ads, digital marketer portfolio, PPC specialist India" />
+  <link rel="canonical" href="https://mohammedjunaid.in/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohammedjunaid.in/" />
+  <meta property="og:title" content="Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads" />
+  <meta property="og:description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
+  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MohammedJunaid" />
+  <meta name="twitter:creator" content="@MohammedJunaid" />
+  <meta name="twitter:title" content="Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads" />
+  <meta name="twitter:description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
+  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads",
+    "description": "Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated.",
+    "url": "https://mohammedjunaid.in/",
+    "author": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  </script>
+</head>
+<body>
+
+<!-- ── Page Loader ── -->
+<div id="page-loader">
+  <div style="text-align:center;">
+    <div class="loader-ring" style="margin:0 auto 1rem;"></div>
+    <p style="font-size:0.75rem;color:var(--text-muted);letter-spacing:2px;">LOADING</p>
+  </div>
+</div>
+
+<!-- ── Transition Overlay ── -->
+<div id="transition-overlay"></div>
+
+<!-- ── Cursor Glow ── -->
+
+<!-- ── Navbar ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">MJ</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="projects.html" class="nav-link">Projects</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+    <a href="certifications.html" class="nav-link">Certifications</a>
+    <a href="testimonials.html" class="nav-link">Testimonials</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="junaidResume.pdf" target="_blank" download class="nav-resume-btn" style="margin-top:0.5rem;display:inline-flex;width:fit-content;">📄 Download Resume</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-blob"></div>
+
+  <div class="section-wrap w-full" style="position:relative;z-index:2;">
+    <div style="max-width:760px;">
+      <div class="floating-badge" style="margin-bottom:1.75rem;">
+        <span class="dot"></span>
+        Available for Projects &amp; Collaborations
+      </div>
+
+      <h1 id="hero-title" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.08;margin-bottom:1.25rem;">
+        Turning Clicks into<br>
+        <span class="gradient-text">Conversions</span> 🚀
+      </h1>
+
+      <p id="typing-wrap" style="font-size:clamp(1rem,2vw,1.2rem);color:var(--text-muted);margin-bottom:2.25rem;min-height:1.8em;">
+        <span id="typed-text" class="typing-text"></span>
+      </p>
+
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+        <a href="contact.html" class="btn-primary">💼 Hire Me</a>
+        <a href="projects.html" class="btn-outline">📊 View Case Studies</a>
+      </div>
+
+      <div style="display:flex;gap:2.5rem;margin-top:3rem;flex-wrap:wrap;">
+        <div>
+          <p style="font-size:1.6rem;font-weight:800;" class="gradient-text">50+</p>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Campaigns</p>
+        </div>
+        <div style="width:1px;background:var(--border-glass);"></div>
+        <div>
+          <p style="font-size:1.6rem;font-weight:800;" class="gradient-text">3X</p>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Avg ROI</p>
+        </div>
+        <div style="width:1px;background:var(--border-glass);"></div>
+        <div>
+          <p style="font-size:1.6rem;font-weight:800;" class="gradient-text">10K+</p>
+          <p style="font-size:0.75rem;color:var(--text-muted);">Leads</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════
+     STATS SECTION
+══════════════════════════════════ -->
+<section style="padding:5rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">By The Numbers</span>
+      <h2 class="section-title">Real Results, <span class="gradient-text">Measurable Impact</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;">
+      <div class="stat-card reveal tilt-card" data-delay="0">
+        <div class="stat-number gradient-text"><span class="counter" data-target="50" data-suffix="+">0</span></div>
+        <div class="stat-label">Campaigns Managed</div>
+      </div>
+      <div class="stat-card reveal tilt-card" data-delay="0.1">
+        <div class="stat-number gradient-text"><span class="counter" data-target="10000" data-suffix="+">0</span></div>
+        <div class="stat-label">Leads Generated</div>
+      </div>
+      <div class="stat-card reveal tilt-card" data-delay="0.2">
+        <div class="stat-number gradient-text"><span class="counter" data-target="300" data-suffix="%">0</span></div>
+        <div class="stat-label">Average ROI Growth</div>
+      </div>
+      <div class="stat-card reveal tilt-card" data-delay="0.3">
+        <div class="stat-number gradient-text"><span class="counter" data-target="40" data-suffix="%">0</span></div>
+        <div class="stat-label">CPC Reduction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     MINI ANALYTICS DASHBOARD
+══════════════════════════════════ -->
+<section style="padding:5rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;" class="reveal">
+      <div>
+        <span class="section-tag">Live Dashboard Preview</span>
+        <h2 class="section-title">Analytics at a <span class="gradient-text">Glance</span></h2>
+      </div>
+      <a href="projects.html" class="btn-outline" style="white-space:nowrap;">See Full Case Studies →</a>
+    </div>
+
+    <!-- Dashboard top metrics -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem;" class="reveal">
+      <div class="chart-card" style="text-align:center;">
+        <div class="chart-card-label">Total Reach</div>
+        <div style="font-size:1.8rem;font-weight:800;" class="gradient-text">2.4M</div>
+        <div style="font-size:0.75rem;color:#22c55e;">↑ +18.2%</div>
+      </div>
+      <div class="chart-card" style="text-align:center;">
+        <div class="chart-card-label">Conv. Rate</div>
+        <div style="font-size:1.8rem;font-weight:800;" class="gradient-text">8.7%</div>
+        <div style="font-size:0.75rem;color:#22c55e;">↑ +3.1%</div>
+      </div>
+      <div class="chart-card" style="text-align:center;">
+        <div class="chart-card-label">Avg CPC</div>
+        <div style="font-size:1.8rem;font-weight:800;" class="gradient-text">₹12.4</div>
+        <div style="font-size:0.75rem;color:#22c55e;">↓ -40%</div>
+      </div>
+      <div class="chart-card" style="text-align:center;">
+        <div class="chart-card-label">ROAS</div>
+        <div style="font-size:1.8rem;font-weight:800;" class="gradient-text">4.2x</div>
+        <div style="font-size:0.75rem;color:#22c55e;">↑ +0.8x</div>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;" class="reveal">
+      <!-- Line chart -->
+      <div class="chart-card">
+        <div class="chart-card-label">Traffic Growth (Last 12 Months)</div>
+        <canvas id="trafficChart" height="120"></canvas>
+      </div>
+      <!-- Pie chart -->
+      <div class="chart-card">
+        <div class="chart-card-label">Traffic Sources</div>
+        <canvas id="sourcePie" height="180"></canvas>
+      </div>
+    </div>
+
+    <!-- Bar chart -->
+    <div class="chart-card reveal" style="margin-top:1.5rem;">
+      <div class="chart-card-label">Campaign Performance (Leads vs Budget ₹K)</div>
+      <canvas id="campaignBar" height="90"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SERVICES PREVIEW
+══════════════════════════════════ -->
+<section style="padding:5rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">What I Do</span>
+      <h2 class="section-title">Full-Funnel <span class="gradient-text">Growth Engine</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
+      <div class="glass-card glow-hover reveal tilt-card" style="padding:2rem;" data-delay="0">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🎯</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Paid Advertising</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Google Ads &amp; Meta Ads campaigns engineered for maximum ROAS and minimum CPC.</p>
+      </div>
+      <div class="glass-card glow-hover reveal tilt-card" style="padding:2rem;" data-delay="0.1">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🔍</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">SEO &amp; Content</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Data-driven SEO strategies that push rankings and drive organic traffic at scale.</p>
+      </div>
+      <div class="glass-card glow-hover reveal tilt-card" style="padding:2rem;" data-delay="0.2">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">📱</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Social Media</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Viral-worthy content strategies that build brand authority and community.</p>
+      </div>
+      <div class="glass-card glow-hover reveal tilt-card" style="padding:2rem;" data-delay="0.3">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">📧</div>
+        <h3 style="font-weight:700;margin-bottom:0.5rem;">Email Marketing</h3>
+        <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;">Automated nurture sequences that convert leads into loyal, paying customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CTA BANNER
+══════════════════════════════════ -->
+<section style="padding:5rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div class="glass-card reveal" style="padding:4rem 2.5rem;text-align:center;background:radial-gradient(ellipse 60% 60% at 50% 0%, rgba(168,85,247,0.15) 0%, transparent 70%);">
+      <span class="section-tag" style="display:block;margin-bottom:0.75rem;">Ready to grow?</span>
+      <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:1rem;">Let's Build Something <span class="gradient-text">Remarkable</span></h2>
+      <p style="color:var(--text-muted);max-width:480px;margin:0 auto 2rem;line-height:1.7;">I help brands scale with strategy, creativity, and data. Let's make your next campaign unforgettable.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary">Start a Project 🚀</a>
+        <a href="projects.html" class="btn-outline">View Case Studies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="font-size:1.6rem;">MJ</a>
+      <p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p>
+      <div class="footer-social" style="margin-top:1.25rem;">
+        <a href="#" class="social-btn" title="LinkedIn">in</a>
+        <a href="#" class="social-btn" title="Instagram">ig</a>
+        <a href="#" class="social-btn" title="Twitter">𝕏</a>
+        <a href="https://wa.me/917780408840" class="social-btn" title="WhatsApp">wa</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Navigation</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-heading">Contact</p>
+      <div class="footer-links">
+        <a href="certifications.html">Certifications</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+917780408840">+91 778 040 8840</a>
+        <a href="mailto:mjunaid@email.com">mjunaid@email.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mohammed Junaid.</span>
+    <span>Built with ❤️ &amp; data</span>
+  </div>
+</footer>
+
+<!-- ── Sticky CTA ── -->
+<a href="contact.html" id="sticky-cta">🚀 Let's Grow Your Brand</a>
+
+<!-- ══ SCRIPTS ══ -->
+<script src="shared.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── Typing animation ─────────────────
+  const phrases = [
+    'Digital Marketing Specialist',
+    'Google Ads & Meta Ads Expert',
+    'SEO & Growth Strategist',
+    'Data-Driven Campaign Manager',
+    'Brand Growth Architect'
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typed-text');
+
+  function typeLoop() {
+    const phrase = phrases[pi];
+    if (!deleting) {
+      el.textContent = phrase.slice(0, ci + 1);
+      ci++;
+      if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, 1800); return; }
+    } else {
+      el.textContent = phrase.slice(0, ci - 1);
+      ci--;
+      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+    }
+    setTimeout(typeLoop, deleting ? 45 : 80);
+  }
+  typeLoop();
+
+  // ── Hero GSAP entrance ───────────────
+  gsap.from('#hero-title', { opacity: 0, y: 60, duration: 1, ease: 'power4.out', delay: 0.6 });
+  gsap.from('#typing-wrap', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out', delay: 1 });
+  gsap.from('.floating-badge', { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out', delay: 0.4 });
+
+  // ── Charts ───────────────────────────
+  const chartDefaults = {
+    plugins: { legend: { labels: { color: '#9baac8', font: { family: 'Poppins', size: 11 } } } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,0.13)' }, ticks: { color: '#6d7fa8' } },
+      y: { grid: { color: 'rgba(255,255,255,0.13)' }, ticks: { color: '#6d7fa8' } }
+    }
+  };
+
+  // Traffic line chart
+  new Chart(document.getElementById('trafficChart'), {
+    type: 'line',
+    data: {
+      labels: ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May'],
+      datasets: [{
+        label: 'Organic Traffic',
+        data: [3200, 4100, 4800, 5500, 6200, 7100, 8300, 9000, 9800, 11200, 12800, 14500],
+        borderColor: '#a78bfa',
+        backgroundColor: 'rgba(168,85,247,0.08)',
+        tension: 0.45, fill: true, pointRadius: 4,
+        pointBackgroundColor: '#a78bfa'
+      },{
+        label: 'Paid Traffic',
+        data: [1200, 1800, 2200, 3000, 3400, 3800, 4200, 4800, 5300, 5900, 6500, 7200],
+        borderColor: '#60a5fa',
+        backgroundColor: 'rgba(59,130,246,0.06)',
+        tension: 0.45, fill: true, pointRadius: 4,
+        pointBackgroundColor: '#60a5fa'
+      }]
+    },
+    options: { ...chartDefaults, responsive: true, maintainAspectRatio: true }
+  });
+
+  // Source pie chart
+  new Chart(document.getElementById('sourcePie'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Organic', 'Paid Search', 'Social', 'Email', 'Direct'],
+      datasets: [{
+        data: [38, 27, 18, 10, 7],
+        backgroundColor: ['#a78bfa','#60a5fa','#f472b6','#22d3ee','#f59e0b'],
+        borderWidth: 0, hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { position: 'bottom', labels: { color: '#9baac8', font: { family: 'Poppins', size: 10 }, padding: 12, boxWidth: 10 } } }
+    }
+  });
+
+  // Campaign bar chart
+  new Chart(document.getElementById('campaignBar'), {
+    type: 'bar',
+    data: {
+      labels: ['E-comm Brand', 'SaaS Product', 'Local Business', 'EdTech', 'Healthcare'],
+      datasets: [{
+        label: 'Leads Generated',
+        data: [1240, 890, 530, 1780, 680],
+        backgroundColor: 'rgba(168,85,247,0.7)',
+        borderRadius: 6
+      },{
+        label: 'Budget (₹K)',
+        data: [85, 60, 35, 120, 45],
+        backgroundColor: 'rgba(59,130,246,0.6)',
+        borderRadius: 6
+      }]
+    },
+    options: { ...chartDefaults, responsive: true, maintainAspectRatio: true }
+  });
+
+  // Card tilt
+  initCardTilt('.tilt-card');
+</script>
+</body>
+</html>

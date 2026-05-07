@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Mohammed Junaid — SEO, Google Ads, Meta Ads, AI Tools</title>
+  <meta name="description" content="Explore Mohammed Junaid's full digital marketing skill set: SEO, SEM, Google Ads, Meta Ads, email marketing, Canva, web design and generative AI tools." />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Skill bar */
+    .skill-row { margin-bottom: 1.5rem; }
+    .skill-row-top { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .skill-name { font-size: 0.875rem; font-weight: 600; }
+    .skill-pct { font-size: 0.8rem; color: var(--text-muted); }
+    .skill-track {
+      height: 6px; background: rgba(255,255,255,0.09); border-radius: 99px; overflow: hidden;
+    }
+    .skill-bar {
+      height: 100%; width: 0%; border-radius: 99px;
+      background: var(--gradient-primary);
+      transition: width 0s;
+    }
+
+    /* Floating skill cards */
+    .skill-chip {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 14px; padding: 1rem 1.25rem;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .skill-chip:hover {
+      transform: translateY(-6px);
+      border-color: rgba(168,85,247,0.4);
+      box-shadow: 0 12px 30px rgba(168,85,247,0.15);
+    }
+    .skill-chip-icon { font-size: 1.5rem; }
+    .skill-chip-label { font-size: 0.875rem; font-weight: 600; }
+    .skill-chip-sub { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* Circular skill */
+    .circle-wrap { text-align: center; }
+    .circle-chart-container { position: relative; width: 120px; height: 120px; margin: 0 auto 0.75rem; }
+
+    /* Tool tags */
+    .tool-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.4rem 0.9rem; border-radius: 8px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.13);
+      font-size: 0.75rem; font-weight: 500; color: var(--text-muted);
+      transition: background 0.25s, color 0.25s;
+    }
+    .tool-tag:hover { background: rgba(168,85,247,0.12); color: var(--neon-purple); }
+  </style>
+  <!-- ═══════════════════════════════════════
+       SEO META TAGS
+  ═══════════════════════════════════════ -->
+  <!-- Primary Meta -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Mohammed Junaid" />
+  <meta name="keywords" content="SEO skills, Google Ads expert, Meta Ads specialist, email marketing, Canva designer, AI marketing tools, digital marketing skills" />
+  <link rel="canonical" href="https://mohammedjunaid.in/skills.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohammedjunaid.in/skills.html" />
+  <meta property="og:title" content="Skills | Mohammed Junaid — SEO, Google Ads, Meta Ads, AI Tools" />
+  <meta property="og:description" content="Explore Mohammed Junaid's full digital marketing skill set: SEO, SEM, Google Ads, Meta Ads, email marketing, Canva, web design and generative AI tools." />
+  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MohammedJunaid" />
+  <meta name="twitter:creator" content="@MohammedJunaid" />
+  <meta name="twitter:title" content="Skills | Mohammed Junaid — SEO, Google Ads, Meta Ads, AI Tools" />
+  <meta name="twitter:description" content="Explore Mohammed Junaid's full digital marketing skill set: SEO, SEM, Google Ads, Meta Ads, email marketing, Canva, web design and generative AI tools." />
+  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Skills | Mohammed Junaid — SEO, Google Ads, Meta Ads, AI Tools",
+    "description": "Explore Mohammed Junaid's full digital marketing skill set: SEO, SEM, Google Ads, Meta Ads, email marketing, Canva, web design and generative AI tools.",
+    "url": "https://mohammedjunaid.in/skills.html",
+    "author": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammed Junaid",
+      "jobTitle": "Digital Marketing Specialist",
+      "url": "https://mohammedjunaid.in",
+      "image": "https://mohammedjunaid.in/profile.jpeg",
+      "email": "mjunaid@email.com",
+      "telephone": "+917780408840",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mohammedjunaid",
+        "https://www.instagram.com/mohammedjunaid"
+      ],
+      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+    }
+  </script>
+</head>
+<body>
+<div id="page-loader"><div style="text-align:center;"><div class="loader-ring" style="margin:0 auto 1rem;"></div><p style="font-size:0.75rem;color:var(--text-muted);letter-spacing:2px;">LOADING</p></div></div>
+<div id="transition-overlay"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-short">MJ</span><span class="logo-full"><span class="lc">M</span><span class="lc">o</span><span class="lc">h</span><span class="lc">a</span><span class="lc">m</span><span class="lc">m</span><span class="lc">e</span><span class="lc">d</span><span class="logo-space"></span><span class="lc">J</span><span class="lc">u</span><span class="lc">n</span><span class="lc">a</span><span class="lc">i</span><span class="lc">d</span></span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a><a href="projects.html" class="nav-link">Projects</a>
+      <a href="experience.html" class="nav-link">Experience</a><a href="certifications.html" class="nav-link">Certifications</a>
+      <a href="testimonials.html" class="nav-link">Testimonials</a><a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="resume.html" class="nav-resume-btn">📄 Resume</a>
+    <button id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+    <a href="skills.html" class="nav-link">Skills</a><a href="projects.html" class="nav-link">Projects</a>
+    <a href="experience.html" class="nav-link">Experience</a><a href="certifications.html" class="nav-link">Certifications</a>
+    <a href="testimonials.html" class="nav-link">Testimonials</a><a href="contact.html" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="page-hero" style="padding:7rem 0 4rem;background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 70%);position:relative;z-index:2;">
+  <div class="section-wrap" style="text-align:center;">
+    <span class="section-tag" id="sk-tag">Capabilities</span>
+    <h1 class="section-title" id="sk-h1">A Full-Stack <span class="gradient-text">Marketing Arsenal</span></h1>
+    <p class="section-sub" style="margin:1rem auto 0;" id="sk-sub">Every tool, tactic, and technology I use to build brands and drive measurable growth.</p>
+  </div>
+</section>
+
+<!-- ══ SKILL BARS ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;">
+      <div class="reveal">
+        <span class="section-tag">Core Marketing</span>
+        <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:2rem;">Performance <span class="gradient-text">Skills</span></h2>
+
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">🔍 SEO (Search Engine Optimisation)</span><span class="skill-pct">90%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="90" style="background:linear-gradient(90deg,#a78bfa,#60a5fa);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">🎯 SEM / Google Ads</span><span class="skill-pct">88%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="88" style="background:linear-gradient(90deg,#60a5fa,#22d3ee);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">📱 Meta Ads (FB &amp; IG)</span><span class="skill-pct">92%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="92" style="background:linear-gradient(90deg,#f472b6,#a78bfa);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">📧 Email Marketing</span><span class="skill-pct">82%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="82" style="background:linear-gradient(90deg,#f59e0b,#f472b6);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">📊 Social Media Marketing</span><span class="skill-pct">87%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="87" style="background:linear-gradient(90deg,#22d3ee,#a78bfa);"></div></div>
+        </div>
+      </div>
+
+      <div class="reveal" data-delay="0.15">
+        <span class="section-tag">Creative & Tech</span>
+        <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:2rem;">Creative <span class="gradient-text">Skills</span></h2>
+
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">🎨 Canva / Design</span><span class="skill-pct">85%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="85" style="background:linear-gradient(90deg,#a78bfa,#f472b6);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">🌐 Web Design (Basics)</span><span class="skill-pct">72%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="72" style="background:linear-gradient(90deg,#60a5fa,#a78bfa);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">🤖 Generative AI Tools</span><span class="skill-pct">88%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="88" style="background:linear-gradient(90deg,#22d3ee,#60a5fa);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">📈 Google Analytics</span><span class="skill-pct">84%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="84" style="background:linear-gradient(90deg,#f59e0b,#22d3ee);"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">📝 Content Strategy</span><span class="skill-pct">86%</span></div>
+          <div class="skill-track"><div class="skill-bar" data-pct="86" style="background:linear-gradient(90deg,#f472b6,#f59e0b);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FLOATING SKILL CARDS ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">Toolkit</span>
+      <h2 class="section-title">What I Work <span class="gradient-text">With</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;">
+      <div class="skill-chip reveal" data-delay="0"><div class="skill-chip-icon">🎯</div><div><div class="skill-chip-label">Google Ads</div><div class="skill-chip-sub">Search · Display · PMax</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.05"><div class="skill-chip-icon">📘</div><div><div class="skill-chip-label">Meta Ads</div><div class="skill-chip-sub">Facebook · Instagram</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.1"><div class="skill-chip-icon">🔍</div><div><div class="skill-chip-label">SEO</div><div class="skill-chip-sub">On-Page · Off-Page · Technical</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.15"><div class="skill-chip-icon">📊</div><div><div class="skill-chip-label">Google Analytics 4</div><div class="skill-chip-sub">Data & Reporting</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.2"><div class="skill-chip-icon">📧</div><div><div class="skill-chip-label">Email Automation</div><div class="skill-chip-sub">Mailchimp · Klaviyo</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.25"><div class="skill-chip-icon">🎨</div><div><div class="skill-chip-label">Canva Pro</div><div class="skill-chip-sub">Design & Creatives</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.3"><div class="skill-chip-icon">🤖</div><div><div class="skill-chip-label">AI Tools</div><div class="skill-chip-sub">ChatGPT · Midjourney · Gemini</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.35"><div class="skill-chip-icon">📱</div><div><div class="skill-chip-label">Social Media</div><div class="skill-chip-sub">Strategy & Management</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.4"><div class="skill-chip-icon">🌐</div><div><div class="skill-chip-label">WordPress</div><div class="skill-chip-sub">Web & Landing Pages</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.45"><div class="skill-chip-icon">📈</div><div><div class="skill-chip-label">Data Studio</div><div class="skill-chip-sub">Looker Studio Reports</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.5"><div class="skill-chip-icon">🔗</div><div><div class="skill-chip-label">Ahrefs / Semrush</div><div class="skill-chip-sub">SEO Research</div></div></div>
+      <div class="skill-chip reveal" data-delay="0.55"><div class="skill-chip-icon">⚡</div><div><div class="skill-chip-label">A/B Testing</div><div class="skill-chip-sub">CRO & Optimization</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RADAR CHART ══ -->
+<section style="padding:4rem 0;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div class="reveal">
+        <span class="section-tag">Skill Radar</span>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:1rem;line-height:1.2;">Balanced <span class="gradient-text">Across All Channels</span></h2>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem;">Unlike single-channel specialists, I offer deep expertise across the full digital marketing spectrum — from awareness to conversion.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <span class="tool-tag">🎯 Paid Media</span>
+          <span class="tool-tag">🔍 Organic Search</span>
+          <span class="tool-tag">📱 Social</span>
+          <span class="tool-tag">📧 Email</span>
+          <span class="tool-tag">📊 Analytics</span>
+          <span class="tool-tag">🎨 Creative</span>
+          <span class="tool-tag">🤖 AI/Automation</span>
+        </div>
+      </div>
+      <div class="reveal" data-delay="0.2">
+        <div class="chart-card" style="background:var(--bg-card);border:1px solid var(--border-glass);border-radius:20px;padding:1.5rem;">
+          <canvas id="radarChart" height="280"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOFT SKILLS ══ -->
+<section style="padding:4rem 0 6rem;position:relative;z-index:2;">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">Beyond the Tools</span>
+      <h2 class="section-title">Soft Skills That <span class="gradient-text">Make the Difference</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+      <div class="glass-card reveal" style="padding:1.5rem;text-align:center;" data-delay="0"><div style="font-size:2rem;margin-bottom:0.5rem;">🧠</div><div style="font-weight:600;margin-bottom:0.25rem;">Strategic Thinking</div><div style="font-size:0.75rem;color:var(--text-muted);">Big picture + granular detail</div></div>
+      <div class="glass-card reveal" style="padding:1.5rem;text-align:center;" data-delay="0.08"><div style="font-size:2rem;margin-bottom:0.5rem;">🗣️</div><div style="font-weight:600;margin-bottom:0.25rem;">Communication</div><div style="font-size:0.75rem;color:var(--text-muted);">Clear, persuasive storytelling</div></div>
+      <div class="glass-card reveal" style="padding:1.5rem;text-align:center;" data-delay="0.16"><div style="font-size:2rem;margin-bottom:0.5rem;">🔁</div><div style="font-weight:600;margin-bottom:0.25rem;">Adaptability</div><div style="font-size:0.75rem;color:var(--text-muted);">Pivots fast, learns faster</div></div>
+      <div class="glass-card reveal" style="padding:1.5rem;text-align:center;" data-delay="0.24"><div style="font-size:2rem;margin-bottom:0.5rem;">🎯</div><div style="font-weight:600;margin-bottom:0.25rem;">Goal Oriented</div><div style="font-size:0.75rem;color:var(--text-muted);">KPI-obsessed mindset</div></div>
+      <div class="glass-card reveal" style="padding:1.5rem;text-align:center;" data-delay="0.32"><div style="font-size:2rem;margin-bottom:0.5rem;">🤝</div><div style="font-weight:600;margin-bottom:0.25rem;">Collaboration</div><div style="font-size:0.75rem;color:var(--text-muted);">Works great in teams</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="index.html" class="nav-logo" style="font-size:1.6rem;max-width:none;overflow:visible;"><span class="logo-short" style="opacity:1;transform:none;font-size:1.6rem;">MJ</span></a><p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p><div class="footer-social" style="margin-top:1.25rem;"><a href="#" class="social-btn">in</a><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">𝕏</a><a href="https://wa.me/917780408840" class="social-btn">wa</a></div></div>
+    <div><p class="footer-heading">Navigation</p><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="experience.html">Experience</a></div></div>
+    <div><p class="footer-heading">Contact</p><div class="footer-links"><a href="certifications.html">Certifications</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="tel:+917780408840">+91 778 040 8840</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 Mohammed Junaid.</span><span>Built with ❤️ &amp; data</span></div>
+</footer>
+<a href="contact.html" id="sticky-cta">🚀 Let's Grow Your Brand</a>
+
+<script src="shared.js"></script>
+<script>
+  gsap.from('#sk-tag,#sk-h1,#sk-sub', { opacity: 0, y: 40, stagger: 0.15, duration: 0.8, delay: 0.5 });
+
+  initSkillBars();
+
+  // Radar chart
+  new Chart(document.getElementById('radarChart'), {
+    type: 'radar',
+    data: {
+      labels: ['SEO', 'Google Ads', 'Meta Ads', 'Email', 'Social Media', 'Analytics', 'AI Tools', 'Design'],
+      datasets: [{
+        label: 'Skill Level',
+        data: [90, 88, 92, 82, 87, 84, 88, 85],
+        borderColor: '#a78bfa',
+        backgroundColor: 'rgba(168,85,247,0.15)',
+        pointBackgroundColor: '#a78bfa',
+        pointBorderColor: '#fff',
+        pointRadius: 5
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        r: {
+          min: 0, max: 100,
+          grid: { color: 'rgba(255,255,255,0.13)' },
+          ticks: { display: false },
+          pointLabels: { color: '#9baac8', font: { family: 'Poppins', size: 11 } }
+        }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+</script>
+</body>
+</html>
