@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/jpeg" href="profile.jpeg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads</title>
@@ -96,6 +97,11 @@
     @keyframes floatBadge { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
     .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+    
+    /* Hero Profile Card */
+    .profile-card:hover .img-default { opacity: 0 !important; }
+    .profile-card:hover .img-hover { opacity: 1 !important; }
+    .profile-card:hover { transform: translateY(-10px) rotateY(-5deg) rotateX(5deg); box-shadow:0 30px 90px rgba(168,85,247,0.4) !important; }
   </style>
   <!-- ═══════════════════════════════════════
        SEO META TAGS
@@ -231,19 +237,20 @@
 <!-- ══════════════════════════════════
      HERO
 ══════════════════════════════════ -->
-<section class="hero-section">
+<section class="hero-section -my-20 -mx-10 -px-10">
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-blob"></div>
 
   <div class="section-wrap w-full" style="position:relative;z-index:2;">
-    <div style="max-width:760px;">
-      <div class="floating-badge" style="margin-bottom:1.75rem;">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;" class="responsive-grid">
+      <div style="max-width:760px;">
+        <div class="floating-badge" style="margin-bottom:1.75rem;">
         <span class="dot"></span>
         Available for Projects &amp; Collaborations
       </div>
 
-      <h1 id="hero-title" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.08;margin-bottom:1.25rem;">
+      <h1 id="hero-title" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.08;margin-bottom:1.25rem; max-width: 800px;">
         Turning Clicks into<br>
         <span class="gradient-text">Conversions</span> <i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i>
       </h1>
@@ -272,6 +279,19 @@
           <p style="font-size:1.6rem;font-weight:800;" class="gradient-text">10K+</p>
           <p style="font-size:0.75rem;color:var(--text-muted);">Leads</p>
         </div>
+      </div>
+      </div>
+      
+      <!-- Right Side Profile Pic -->
+      <div class="hero-image-wrap reveal" data-delay="0.4" style="position:relative; perspective: 1000px; display:flex; justify-content:center;">
+        <div class="profile-card" style="position:relative; width:100%; max-width:580px; aspect-ratio:4/5; border-radius:24px; overflow:hidden; box-shadow:0 24px 80px rgba(168,85,247,0.25); border:1px solid var(--border-glass); transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s; transform-style: preserve-3d; cursor:pointer;">
+          <img src="profile.jpeg" alt="Mohammed Junaid" class="img-default" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; transition:opacity 0.5s;" />
+          <img src="candid.jpeg" alt="Mohammed Junaid Candid" class="img-hover" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity 0.5s;" />
+          <div style="position:absolute; inset:0; border-radius:24px; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events:none;"></div>
+          <div style="position:absolute; bottom:0; left:0; right:0; height:40%; background:linear-gradient(to top, rgba(11,15,30,0.8), transparent); pointer-events:none;"></div>
+        </div>
+        <div style="position:absolute; top:-20px; right:10%; width:120px; height:120px; background:var(--gradient-primary); filter:blur(50px); opacity:0.4; z-index:-1;"></div>
+        <div style="position:absolute; bottom:-20px; left:10%; width:120px; height:120px; background:var(--neon-blue); filter:blur(50px); opacity:0.4; z-index:-1;"></div>
       </div>
     </div>
   </div>

@@ -66,20 +66,55 @@ function initNavbar() {
   });
 }
 
-// ── Cursor Glow ────────────────────────────────────────────
+// ── Cursor Glow & Custom Cursor ────────────────────────────
 function initCursorGlow() {
   if (window.matchMedia('(pointer:fine)').matches) {
+    document.body.classList.add('hide-default-cursor');
+
     const glow = document.createElement('div');
     glow.id = 'cursor-glow';
     document.body.appendChild(glow);
 
-    let mx = 0, my = 0, cx = 0, cy = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    const dot = document.createElement('div');
+    dot.id = 'custom-cursor-dot';
+    document.body.appendChild(dot);
+
+    const ring = document.createElement('div');
+    ring.id = 'custom-cursor-ring';
+    document.body.appendChild(ring);
+
+    let mx = 0, my = 0, cx = 0, cy = 0, rx = 0, ry = 0;
+    
+    document.addEventListener('mousemove', e => { 
+      mx = e.clientX; my = e.clientY; 
+      // Instant update for the dot so it feels responsive
+      dot.style.transform = `translate(${mx}px, ${my}px)`;
+    });
+
+    // Add hover effects for interactive elements
+    const interactiveSelectors = 'a, button, input, textarea, select, .tilt-card, .profile-card, label';
+    document.querySelectorAll(interactiveSelectors).forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        dot.classList.add('hovered');
+        ring.classList.add('hovered');
+      });
+      el.addEventListener('mouseleave', () => {
+        dot.classList.remove('hovered');
+        ring.classList.remove('hovered');
+      });
+    });
 
     (function animateCursor() {
+      // Smooth follow for the glow
       cx += (mx - cx) * 0.12;
       cy += (my - cy) * 0.12;
       glow.style.transform = `translate(${cx - 200}px, ${cy - 200}px)`;
+
+      // Snappy but smooth follow for the ring
+      rx += (mx - rx) * 0.3;
+      ry += (my - ry) * 0.3;
+      ring.style.transform = `translate(${rx}px, ${ry}px)`;
+
       requestAnimationFrame(animateCursor);
     })();
   }

@@ -69,7 +69,7 @@ body {
 }
 #transition-overlay.hidden { display: none; }
 
-/* ── Cursor Glow ────────────────────────── */
+/* ── Cursor Glow & Custom Cursor ───────── */
 #cursor-glow {
   position: fixed; top: 0; left: 0; z-index: 1;
   width: 400px; height: 400px;
@@ -77,6 +77,41 @@ body {
   background: radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%);
   pointer-events: none;
   transition: opacity 0.3s;
+}
+
+.hide-default-cursor, .hide-default-cursor * { cursor: none !important; }
+
+#custom-cursor-dot {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  width: 8px; height: 8px;
+  background: var(--neon-purple);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: 0 0 10px rgba(168,85,247,0.6);
+}
+
+#custom-cursor-ring {
+  position: fixed; top: 0; left: 0; z-index: 9998;
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(168,85,247,0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-color 0.2s, background-color 0.2s;
+  box-shadow: 0 0 15px rgba(168,85,247,0.15);
+}
+
+#custom-cursor-dot.hovered {
+  width: 12px; height: 12px;
+  background: var(--neon-cyan);
+}
+
+#custom-cursor-ring.hovered {
+  width: 60px; height: 60px;
+  border-color: rgba(34,211,238,0.6);
+  background: rgba(34,211,238,0.05);
 }
 
 /* ── Navbar ──────────────────────────────── */
