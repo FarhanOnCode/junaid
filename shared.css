@@ -299,7 +299,8 @@ body {
 }
 
 /* ── Section wrapper ─────────────────────── */
-.section-wrap { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+.section-wrap { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
+@media (min-width: 640px) { .section-wrap { padding: 0 2rem; } }
 
 /* ── Reveal animation class ──────────────── */
 .reveal { opacity: 0; }
@@ -402,3 +403,147 @@ p, li { line-height: 1.75; }
 [style*="padding:5rem 0"] { position: relative; }
 [style*="padding:4rem 0"] { position: relative; }
 [style*="padding:3rem 0"] { position: relative; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Mobile First Fixes
+═══════════════════════════════════════════ */
+
+/* ── Hero two-column → single column on mobile ── */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  /* Move the profile image BELOW text on mobile */
+  .hero-image-wrap {
+    order: -1;  /* show image above title on small phones */
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+  .hero-image-wrap {
+    max-width: 200px;
+  }
+}
+
+/* ── Hero section: proper padding on mobile ── */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 5rem;
+    padding-left: 0;
+    padding-right: 0;
+    /* Remove any negative margin that causes clipping */
+    margin: 0 !important;
+  }
+  .hero-section .section-wrap {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+}
+
+/* ── Hero title clamp on smallest phones ── */
+@media (max-width: 480px) {
+  #hero-title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    line-height: 1.12 !important;
+  }
+  .hero-section {
+    padding-top: 4.5rem;
+  }
+}
+
+/* ── Floating badge: wraps cleanly ── */
+.floating-badge {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+/* ── Buttons row: wrap on small screens ── */
+@media (max-width: 480px) {
+  .btn-primary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+/* ── Stats strip below hero ── */
+@media (max-width: 480px) {
+  /* Divider lines disappear when stacked */
+  [style*="width:1px;background:var(--border-glass)"] {
+    display: none;
+  }
+}
+
+/* ── Dashboard charts: stack on mobile ── */
+@media (max-width: 768px) {
+  /* Line + pie charts side by side → vertical */
+  [style*="grid-template-columns:2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Reduce chart height to prevent overflow */
+  #trafficChart { max-height: 200px; }
+  #sourcePie    { max-height: 200px; }
+  #campaignBar  { max-height: 200px; }
+}
+
+/* ── Services grid: min-width fallback ── */
+@media (max-width: 480px) {
+  [style*="minmax(260px,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── CTA Banner: padding on mobile ── */
+@media (max-width: 480px) {
+  [style*="padding:4rem 2.5rem"] {
+    padding: 2rem 1.25rem !important;
+  }
+}
+
+/* ── Sticky CTA: move further from edge on narrow phones ── */
+@media (max-width: 480px) {
+  #sticky-cta {
+    right: 1rem;
+    bottom: -80px;
+    font-size: 0.75rem;
+    padding: 0.65rem 1rem;
+  }
+  #sticky-cta.visible { bottom: 1rem; }
+}
+
+/* ── Profile card: constrain on tablet ── */
+@media (max-width: 900px) {
+  .profile-card {
+    max-width: 280px !important;
+    margin: 0 auto;
+  }
+}
+
+/* ── Global overflow guard ── */
+section, main, footer, header {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Collapse ALL remaining 2-col inline grids on mobile ── */
+@media (max-width: 768px) {
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1.1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="gap:4rem"] {
+    gap: 2rem !important;
+  }
+  [style*="gap:3rem"] {
+    gap: 1.5rem !important;
+  }
+}

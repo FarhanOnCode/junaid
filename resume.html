@@ -7,73 +7,85 @@
   <title>Resume | Mohammed Junaid — Digital Marketing Expert</title>
   <meta name="description" content="View and download Mohammed Junaid's digital marketing resume. Expert in Google Ads, Meta Ads, SEO, email marketing and AI-powered growth strategies." />
   <link rel="stylesheet" href="shared.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <style>
-    /* ── Viewer Layout ── */
+    /* ── Full-bleed viewer layout (no page scroll — the iframe scrolls internally) ── */
     .resume-viewer-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
-      padding-top: 4.5rem; /* below navbar */
+      padding-top: 4.5rem; /* below fixed navbar */
     }
 
-    /* ── Top action bar ── */
+    /* Prevent body scroll so the iframe fills the viewport */
+    body { overflow: hidden; }
+
+    /* ── Action bar ── */
     .viewer-bar {
-      background: rgba(11,15,30,0.95);
+      background: rgba(11,15,30,0.97);
       border-bottom: 1px solid rgba(255,255,255,0.1);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      padding: 0.75rem 1.5rem;
+      padding: 0.6rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      position: sticky;
-      top: 4.5rem;
+      gap: 0.6rem;
       z-index: 100;
+      flex-shrink: 0;
     }
 
     .viewer-bar-left {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      min-width: 0;
     }
 
-    .back-btn {
+    /* ── Smart back button ── */
+    #back-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.1rem;
+      gap: 0.45rem;
+      padding: 0.45rem 1rem;
       border-radius: 50px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.14);
       color: var(--text-primary);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.25s, border-color 0.25s, transform 0.2s;
       cursor: pointer;
+      transition: background 0.22s, border-color 0.22s, transform 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-    .back-btn:hover {
+    #back-btn:hover {
       background: rgba(255,255,255,0.14);
-      border-color: rgba(167,139,250,0.4);
+      border-color: rgba(167,139,250,0.5);
       transform: translateX(-2px);
       color: #fff;
     }
-    .back-arrow {
-      font-size: 1rem;
+    #back-btn .arrow {
+      display: inline-block;
       transition: transform 0.2s;
     }
-    .back-btn:hover .back-arrow { transform: translateX(-3px); }
+    #back-btn:hover .arrow { transform: translateX(-3px); }
 
     .viewer-title {
-      font-size: 0.85rem;
-      font-weight: 700;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .viewer-title span {
+    .viewer-title strong {
       background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -83,166 +95,119 @@
     .viewer-bar-right {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.5rem;
+      flex-shrink: 0;
     }
 
-    .download-btn {
+    .action-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.5rem 1.1rem;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
       border-radius: 50px;
-      background: var(--gradient-primary);
-      color: #fff;
       font-size: 0.78rem;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 2px 14px rgba(167,139,250,0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
       white-space: nowrap;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.22s;
     }
-    .download-btn:hover {
+    .action-btn-outline {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--text-primary);
+    }
+    .action-btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(167,139,250,0.4);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .action-btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      color: #fff;
+      box-shadow: 0 2px 14px rgba(167,139,250,0.35);
+    }
+    .action-btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(167,139,250,0.55);
     }
 
-    /* ── PDF iframe ── */
+    /* ── PDF frame: fills remaining height ── */
     .pdf-frame-wrap {
       flex: 1;
-      background: #1a1f35;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 1.5rem 1rem 3rem;
+      overflow: hidden;
+      background: #111827;
+      position: relative;
     }
 
-    .pdf-frame {
+    #pdf-iframe {
       width: 100%;
-      max-width: 900px;
-      height: calc(100vh - 11rem);
-      min-height: 600px;
+      height: 100%;
       border: none;
-      border-radius: 12px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-      background: #fff;
+      display: block;
     }
 
-    /* Fallback for mobile where iframe PDF doesn't work well */
-    .pdf-fallback {
-      display: none;
-      text-align: center;
-      padding: 3rem 1.5rem;
-    }
-
-    @media (max-width: 640px) {
-      .pdf-frame { display: none; }
-      .pdf-fallback { display: block; }
-      .viewer-title { display: none; }
-    }
-
-    /* Loading shimmer */
-    .pdf-loading {
+    /* ── Loading overlay ── */
+    #pdf-loading {
       position: absolute;
       inset: 0;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #1a1f35;
-      border-radius: 12px;
-      flex-direction: column;
       gap: 1rem;
+      background: #111827;
       color: var(--text-muted);
       font-size: 0.875rem;
+      z-index: 10;
+      transition: opacity 0.4s;
+    }
+    #pdf-loading.hidden {
+      opacity: 0;
       pointer-events: none;
     }
-    .pdf-frame-container {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
+
+    /* ── Mobile fallback ── */
+    #pdf-mobile-fallback {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      #pdf-iframe { display: none; }
+      #pdf-mobile-fallback { display: flex; }
+      #pdf-loading { display: none; }
+      .viewer-title { display: none; }
+      /* Smaller buttons on mobile */
+      .action-btn { padding: 0.4rem 0.85rem; font-size: 0.72rem; }
+      /* Hide 'Full Screen' text label, keep icon only */
+      .hide-xs { display: none; }
+    }
+
+    /* ── Label pill on fallback ── */
+    .resume-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      background: rgba(167,139,250,0.1);
+      border: 1px solid rgba(167,139,250,0.25);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--neon-purple);
     }
   </style>
-  <!-- ═══════════════════════════════════════
-       SEO META TAGS
-  ═══════════════════════════════════════ -->
-  <!-- Primary Meta -->
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="author" content="Mohammed Junaid" />
-  <meta name="keywords" content="Mohammed Junaid resume, digital marketing CV, marketing professional resume India, Google Ads specialist CV" />
-  <link rel="canonical" href="https://mohammedjunaid.in/resume.html" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mohammedjunaid.in/resume.html" />
-  <meta property="og:title" content="Resume | Mohammed Junaid — Digital Marketing Expert" />
-  <meta property="og:description" content="View and download Mohammed Junaid's digital marketing resume. Expert in Google Ads, Meta Ads, SEO, email marketing and AI-powered growth strategies." />
-  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
-  <meta property="og:locale" content="en_IN" />
-
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@MohammedJunaid" />
-  <meta name="twitter:creator" content="@MohammedJunaid" />
-  <meta name="twitter:title" content="Resume | Mohammed Junaid — Digital Marketing Expert" />
-  <meta name="twitter:description" content="View and download Mohammed Junaid's digital marketing resume. Expert in Google Ads, Meta Ads, SEO, email marketing and AI-powered growth strategies." />
-  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Resume | Mohammed Junaid — Digital Marketing Expert",
-    "description": "View and download Mohammed Junaid's digital marketing resume. Expert in Google Ads, Meta Ads, SEO, email marketing and AI-powered growth strategies.",
-    "url": "https://mohammedjunaid.in/resume.html",
-    "author": {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohammed Junaid",
-      "jobTitle": "Digital Marketing Specialist",
-      "url": "https://mohammedjunaid.in",
-      "image": "https://mohammedjunaid.in/profile.jpeg",
-      "email": "mdmohammedjunaid489@gmail.com",
-      "telephone": "+919000089105",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/mohammedjunaid",
-        "https://www.instagram.com/mohammedjunaid"
-      ],
-      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohammed Junaid",
-      "jobTitle": "Digital Marketing Specialist",
-      "url": "https://mohammedjunaid.in",
-      "image": "https://mohammedjunaid.in/profile.jpeg",
-      "email": "mdmohammedjunaid489@gmail.com",
-      "telephone": "+919000089105",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "addressCountry": "IN"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/mohammedjunaid",
-        "https://www.instagram.com/mohammedjunaid"
-      ],
-      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
-    }
-  </script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -270,7 +235,9 @@
       <a href="testimonials.html" class="nav-link">Testimonials</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
-    <a href="resume.html" class="nav-resume-btn"><i data-lucide="file-text" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Resume</a>
+    <a href="resume.html" class="nav-resume-btn active-nav">
+      <i data-lucide="file-text" style="width:1.2em;height:1.2em;display:inline-block;vertical-align:text-bottom;"></i> Resume
+    </a>
     <button id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div id="mobile-menu">
@@ -282,121 +249,155 @@
     <a href="certifications.html" class="nav-link">Certifications</a>
     <a href="testimonials.html" class="nav-link">Testimonials</a>
     <a href="contact.html" class="nav-link">Contact</a>
-    <a href="resume.html" class="nav-resume-btn" style="margin-top:0.5rem;display:inline-flex;width:fit-content;"><i data-lucide="file-text" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> View Resume</a>
+    <a href="resume.html" class="nav-resume-btn active-nav" style="margin-top:0.5rem;display:inline-flex;width:fit-content;">
+      <i data-lucide="file-text" style="width:1.2em;height:1.2em;display:inline-block;vertical-align:text-bottom;"></i> Resume
+    </a>
   </div>
 </nav>
 
 <!-- ══ RESUME VIEWER ══ -->
-<div class="resume-viewer-wrap">
+<div class="resume-viewer-wrap" id="viewer-wrap">
 
   <!-- Action Bar -->
   <div class="viewer-bar" id="viewer-bar">
     <div class="viewer-bar-left">
-      <!-- Back Button -->
-      <a href="contact.html" class="back-btn" id="back-btn">
-        <span class="back-arrow">←</span>
-        Back to Contact
-      </a>
-      <span class="viewer-title">Mohammed Junaid — <span>Digital Marketing Resume</span></span>
+
+      <!-- Smart Back Button — label set by JS -->
+      <button id="back-btn" type="button" aria-label="Go back">
+        <span class="arrow">←</span>
+        <span id="back-label">Back</span>
+      </button>
+
+      <span class="viewer-title">
+        Mohammed Junaid &mdash; <strong>Digital Marketing Resume</strong>
+      </span>
     </div>
+
     <div class="viewer-bar-right">
-      <a href="junaidResume.pdf" download="Mohammed_Junaid_Resume.pdf" class="download-btn">
-        <i data-lucide="download" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Download PDF
+      <!-- Open in new tab (so user can print from browser) -->
+      <a href="junaidResume.pdf" target="_blank" rel="noopener"
+         class="action-btn action-btn-outline" id="open-tab-btn" title="Open PDF in new tab">
+        <i data-lucide="external-link" style="width:1em;height:1em;display:inline-block;vertical-align:middle;"></i>
+        <span class="hide-xs">Full Screen</span>
+      </a>
+      <!-- Download -->
+      <a href="junaidResume.pdf" download="Mohammed_Junaid_Resume.pdf"
+         class="action-btn action-btn-primary">
+        <i data-lucide="download" style="width:1em;height:1em;display:inline-block;vertical-align:middle;"></i>
+        Download PDF
       </a>
     </div>
   </div>
 
-  <!-- PDF Viewer -->
+  <!-- PDF Frame -->
   <div class="pdf-frame-wrap">
-    <div class="pdf-frame-container">
-      <!-- Loading indicator (hidden once iframe loads) -->
-      <div class="pdf-loading" id="pdf-loading">
-        <div class="loader-ring"></div>
-        <p>Loading Resume...</p>
-      </div>
-
-      <!-- Embedded PDF -->
-      <iframe
-        id="pdf-iframe"
-        class="pdf-frame"
-        src="junaidResume.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH"
-        title="Mohammed Junaid Resume"
-        onload="document.getElementById('pdf-loading').style.display='none'">
-      </iframe>
+    <!-- Loading spinner -->
+    <div id="pdf-loading">
+      <div class="loader-ring"></div>
+      <p>Loading Resume…</p>
     </div>
 
-    <!-- Mobile fallback -->
-    <div class="pdf-fallback">
-      <div style="font-size:3rem;margin-bottom:1rem;"><i data-lucide="file-text" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i></div>
-      <h2 style="font-size:1.2rem;font-weight:800;margin-bottom:0.5rem;">Mohammed Junaid</h2>
-      <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1.5rem;line-height:1.7;">
-        Your browser may not support inline PDF viewing on mobile.<br>
-        Tap below to open or download the resume.
+    <!-- Embedded PDF — toolbar=0 hides browser's default PDF chrome -->
+    <iframe
+      id="pdf-iframe"
+      src="junaidResume.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+      title="Mohammed Junaid — Digital Marketing Resume"
+      onload="iframeLoaded()">
+    </iframe>
+
+    <!-- Mobile Fallback (shown on small screens via CSS) -->
+    <div id="pdf-mobile-fallback">
+      <div class="resume-pill">
+        <i data-lucide="file-text" style="width:1em;height:1em;display:inline-block;vertical-align:middle;"></i>
+        Resume
+      </div>
+      <div style="font-size:3.5rem;line-height:1;">📄</div>
+      <h2 style="font-size:1.3rem;font-weight:800;">Mohammed Junaid</h2>
+      <p style="color:var(--text-muted);font-size:0.875rem;max-width:300px;line-height:1.7;">
+        Digital Marketing Expert — Google Ads, Meta Ads, SEO &amp; Growth Strategy
       </p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="junaidResume.pdf" target="_blank" class="btn-primary"><i data-lucide="file-text" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Open Resume</a>
-        <a href="junaidResume.pdf" download="Mohammed_Junaid_Resume.pdf" class="btn-outline"><i data-lucide="download" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Download</a>
+      <p style="color:var(--text-muted);font-size:0.75rem;">
+        Tap below to view or save the resume.
+      </p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+        <a href="junaidResume.pdf" target="_blank" rel="noopener" class="action-btn action-btn-outline">
+          <i data-lucide="eye" style="width:1em;height:1em;display:inline-block;vertical-align:middle;"></i>
+          View Resume
+        </a>
+        <a href="junaidResume.pdf" download="Mohammed_Junaid_Resume.pdf" class="action-btn action-btn-primary">
+          <i data-lucide="download" style="width:1em;height:1em;display:inline-block;vertical-align:middle;"></i>
+          Download
+        </a>
       </div>
     </div>
   </div>
 
-</div>
-
-<!-- Footer -->
-<footer id="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo" style="font-size:1.6rem;max-width:none;overflow:visible;"><span class="logo-short" style="opacity:1;transform:none;font-size:1.6rem;">MJ</span></a>
-      <p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p>
-      <div class="footer-social" style="margin-top:1.25rem;">
-        <a href="https://www.linkedin.com/in/mohd-junaid-00198435a/" target="_blank" class="social-btn">in</a>
-        <a href="#" class="social-btn">ig</a>
-        <a href="#" class="social-btn">𝕏</a>
-        <a href="https://wa.me/919000089105" class="social-btn">wa</a>
-      </div>
-    </div>
-    <div>
-      <p class="footer-heading">Navigation</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a><a href="about.html">About</a>
-        <a href="skills.html">Skills</a><a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-      </div>
-    </div>
-    <div>
-      <p class="footer-heading">Contact</p>
-      <div class="footer-links">
-        <a href="certifications.html">Certifications</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
-        <a href="tel:+919000089105">+91 90000 89105</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Mohammed Junaid.</span>
-    <span>Built with <i data-lucide="heart" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;"></i> &amp; data</span>
-  </div>
-</footer>
-
-<a href="contact.html" id="sticky-cta"><i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Let's Grow Your Brand</a>
+</div><!-- /.resume-viewer-wrap -->
 
 <script src="shared.js"></script>
 <script>
-  // GSAP entrance
-  gsap.from('#viewer-bar', { opacity: 0, y: -20, duration: 0.6, delay: 0.5, ease: 'power2.out' });
-  gsap.from('.pdf-frame-container', { opacity: 0, y: 30, duration: 0.8, delay: 0.65, ease: 'power3.out' });
+  /* ── Smart Back Button ─────────────────────────────
+     Reads the referrer to show the correct page name.
+     Falls back to history.back(), then to index.html.
+  ──────────────────────────────────────────────────── */
+  const PAGE_NAMES = {
+    'index.html'          : 'Home',
+    'about.html'          : 'About',
+    'skills.html'         : 'Skills',
+    'projects.html'       : 'Case Studies',
+    'experience.html'     : 'Experience',
+    'certifications.html' : 'Certifications',
+    'testimonials.html'   : 'Testimonials',
+    'contact.html'        : 'Contact',
+    ''                    : 'Home',   // root URL = index
+  };
 
-  // Smart back button: go back in history if possible, else go home
-  document.getElementById('back-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-    if (window.history.length > 1 && document.referrer && document.referrer.includes(window.location.hostname)) {
-      window.history.back();
-    } else {
-      window.location.href = 'index.html';
+  (function initBackBtn() {
+    const btn       = document.getElementById('back-btn');
+    const labelEl   = document.getElementById('back-label');
+    const ref       = document.referrer;
+
+    // Figure out which page sent us here
+    let backHref  = 'index.html';
+    let backLabel = '← Home';
+
+    if (ref) {
+      try {
+        const refUrl  = new URL(ref);
+        const refPage = refUrl.pathname.split('/').pop() || 'index.html';
+        // Only trust referrers on the same host OR local file
+        if (refUrl.hostname === window.location.hostname || refUrl.protocol === 'file:') {
+          const name = PAGE_NAMES[refPage] || refPage.replace('.html','');
+          backHref  = refPage || 'index.html';
+          backLabel = name;
+        }
+      } catch (e) { /* cross-origin or bad URL — keep defaults */ }
     }
-  });
+
+    labelEl.textContent = backLabel;
+
+    btn.addEventListener('click', function () {
+      // Use browser history if available (preserves scroll position, animations, etc.)
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = backHref;
+      }
+    });
+  }());
+
+  /* ── PDF iframe load ───────────────────────────── */
+  function iframeLoaded() {
+    const loading = document.getElementById('pdf-loading');
+    loading.classList.add('hidden');
+    // Remove from DOM after fade so it can't block clicks
+    setTimeout(() => loading.remove(), 500);
+  }
+
+  /* ── GSAP entrance ─────────────────────────────── */
+  gsap.from('#viewer-bar',      { opacity: 0, y: -16, duration: 0.5, delay: 0.4, ease: 'power2.out' });
+  gsap.from('.pdf-frame-wrap',  { opacity: 0, y: 20,  duration: 0.7, delay: 0.55, ease: 'power3.out' });
 </script>
-  <script>lucide.createIcons();</script>
+<script>lucide.createIcons();</script>
 </body>
 </html>
