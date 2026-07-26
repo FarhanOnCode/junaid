@@ -403,28 +403,46 @@ p, li { line-height: 1.75; }
   }
 }
 
-/* ── Hero section: proper padding on mobile ── */
+/* ── Hero section: proper padding & height on mobile ── */
 @media (max-width: 768px) {
   .hero-section {
-    padding-top: 5rem;
+    min-height: auto !important;
+    padding-top: 4.5rem !important;
+    padding-bottom: 2rem !important;
     padding-left: 0;
     padding-right: 0;
-    /* Remove any negative margin that causes clipping */
     margin: 0 !important;
   }
   .hero-section .section-wrap {
-    padding: 1.5rem 1.25rem 2rem;
+    padding: 0.5rem 1.25rem 1.5rem !important;
+  }
+  .page-hero {
+    padding-top: 4.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-stats-row {
+    margin-top: 1.5rem !important;
+    gap: 1.5rem !important;
   }
 }
 
-/* ── Hero title clamp on smallest phones ── */
+/* ── Hero title & spacing on smallest phones ── */
 @media (max-width: 480px) {
   #hero-title {
     font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
     line-height: 1.12 !important;
+    margin-bottom: 0.85rem !important;
   }
   .hero-section {
-    padding-top: 4.5rem;
+    padding-top: 4.25rem !important;
+    padding-bottom: 1.25rem !important;
+  }
+  .floating-badge {
+    margin-bottom: 0.85rem !important;
+  }
+  #typing-wrap {
+    margin-bottom: 1.25rem !important;
+    min-height: auto !important;
   }
 }
 
@@ -500,6 +518,19 @@ p, li { line-height: 1.75; }
 section, main, footer, header {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* ── Mobile section padding compaction ── */
+@media (max-width: 768px) {
+  [style*="padding:5rem 0"] {
+    padding: 2.5rem 0 !important;
+  }
+  [style*="padding:4rem 0"] {
+    padding: 2rem 0 !important;
+  }
+  [style*="padding:3rem 0"] {
+    padding: 1.5rem 0 !important;
+  }
 }
 
 /* ── Collapse ALL remaining 2-col inline grids on mobile ── */
