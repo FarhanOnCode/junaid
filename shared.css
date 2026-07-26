@@ -387,20 +387,19 @@ p, li { line-height: 1.75; }
 }
 @media (max-width: 900px) {
   .responsive-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.5rem !important;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  /* Place profile image BELOW text & stats on mobile */
+  /* Move the profile image BELOW text on mobile */
   .hero-image-wrap {
-    order: 2 !important;
-    max-width: 280px !important;
-    margin: 1.75rem auto 1rem !important;
+    order: -1;  /* show image above title on small phones */
+    max-width: 260px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 640px) {
   .hero-image-wrap {
-    max-width: 280px !important;
+    max-width: 200px;
   }
 }
 
@@ -507,31 +506,11 @@ p, li { line-height: 1.75; }
   #sticky-cta.visible { bottom: 1rem; }
 }
 
-/* ── Profile card: mobile layout & 3D styling ── */
-.profile-card {
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.12s ease-out, box-shadow 0.3s ease;
-}
-.profile-card.touch-active .img-default { opacity: 0 !important; }
-.profile-card.touch-active .img-hover { opacity: 1 !important; }
-
+/* ── Profile card: constrain on tablet ── */
 @media (max-width: 900px) {
-  .hero-image-wrap {
-    order: 2 !important;
-    display: flex !important;
-    justify-content: center !important;
-    max-width: 280px !important;
-    margin: 1.75rem auto 1rem !important;
-    width: 100% !important;
-  }
   .profile-card {
     max-width: 280px !important;
-    width: 100% !important;
-    aspect-ratio: 4/5 !important;
-    margin: 0 auto !important;
-    border-radius: 24px !important;
-    box-shadow: 0 20px 60px rgba(168,85,247,0.3) !important;
+    margin: 0 auto;
   }
 }
 
@@ -568,4 +547,5 @@ section, main, footer, header {
   [style*="gap:3rem"] {
     gap: 1.5rem !important;
   }
+}
 }

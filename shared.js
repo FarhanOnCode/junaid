@@ -70,7 +70,6 @@ window.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initPageTransitions();
   initStickyTicker();
-  initGyro3D();
 });
 
 // ── Navbar ────────────────────────────────────────────────────────────────
@@ -317,95 +316,5 @@ function initSkillBars() {
 
   document.querySelectorAll('.skill-bar').forEach(function(b) {
     obs.observe(b);
-  });
-}
-
-// ── 3D Gyroscope & Mobile Touch Tilt ──────────────────────────────────────
-function initGyro3D() {
-  var cards = document.querySelectorAll('.profile-card, .tilt-card');
-  if (!cards.length) return;
-
-  var currentRotX = 0, currentRotY = 0;
-  var targetRotX = 0, targetRotY = 0;
-  var isAnimating = false;
-
-  function updateTilt() {
-    currentRotX += (targetRotX - currentRotX) * 0.12;
-    currentRotY += (targetRotY - currentRotY) * 0.12;
-
-    cards.forEach(function(card) {
-      card.style.transform = 'perspective(1000px) rotateX(' + currentRotX.toFixed(2) + 'deg) rotateY(' + currentRotY.toFixed(2) + 'deg) scale3d(1.03, 1.03, 1.03)';
-    });
-
-    if (isAnimating) {
-      requestAnimationFrame(updateTilt);
-    }
-  }
-
-  function startAnimation() {
-    if (!isAnimating) {
-      isAnimating = true;
-      requestAnimationFrame(updateTilt);
-    }
-  }
-
-  // 1. Gyroscope Sensor (DeviceOrientationEvent)
-  function handleOrientation(e) {
-    if (e.gamma === null || e.beta === null) return;
-    
-    var gamma = Math.max(-40, Math.min(40, e.gamma));
-    var beta  = Math.max(-40, Math.min(40, e.beta - 40));
-
-    targetRotY = (gamma / 40) * 20;   // max 20deg tilt
-    targetRotX = (-beta / 40) * 20;  // max 20deg tilt
-
-    startAnimation();
-  }
-
-  // Bind DeviceOrientation
-  if (window.DeviceOrientationEvent) {
-    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-      document.addEventListener('touchstart', function requestGyroPermission() {
-        DeviceOrientationEvent.requestPermission().then(function(res) {
-          if (res === 'granted') {
-            window.addEventListener('deviceorientation', handleOrientation, true);
-          }
-        }).catch(function() {});
-        document.removeEventListener('touchstart', requestGyroPermission);
-      }, { once: true });
-    } else {
-      window.addEventListener('deviceorientation', handleOrientation, true);
-    }
-  }
-
-  // 2. Touch Move / Drag Interaction for Mobile Touch
-  cards.forEach(function(card) {
-    card.addEventListener('touchmove', function(e) {
-      if (!e.touches[0]) return;
-      var rect  = card.getBoundingClientRect();
-      var touch = e.touches[0];
-      var x = touch.clientX - rect.left - rect.width / 2;
-      var y = touch.clientY - rect.top - rect.height / 2;
-
-      targetRotX = (-y / (rect.height / 2)) * 22;
-      targetRotY = (x / (rect.width / 2)) * 22;
-
-      startAnimation();
-    }, { passive: true });
-
-    card.addEventListener('touchend', function() {
-      targetRotX = 0;
-      targetRotY = 0;
-      setTimeout(function() {
-        if (!window.DeviceOrientationEvent) {
-          isAnimating = false;
-        }
-      }, 1000);
-    });
-
-    // Touch tap toggle for candid image on mobile
-    card.addEventListener('click', function() {
-      card.classList.toggle('touch-active');
-    });
   });
 }
