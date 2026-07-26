@@ -157,36 +157,6 @@ body {
 }
 .active-nav { color: var(--neon-purple) !important; }
 
-/* ── Resume CTA Button in Navbar ─────────── */
-.nav-resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 50px;
-  background: var(--gradient-primary);
-  color: #fff !important;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-decoration: none;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-  box-shadow: 0 2px 14px rgba(167,139,250,0.35);
-  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
-  margin-left: 0.5rem;
-  flex-shrink: 0;
-  animation: resumePulse 3s ease-in-out infinite;
-}
-.nav-resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(167,139,250,0.55);
-  opacity: 0.95;
-  animation: none;
-}
-@keyframes resumePulse {
-  0%, 100% { box-shadow: 0 2px 14px rgba(167,139,250,0.35); }
-  50%       { box-shadow: 0 4px 22px rgba(167,139,250,0.65); }
-}
 
 /* hamburger — hidden on desktop, shown on mobile */
 #hamburger {

@@ -30,7 +30,7 @@
       loader.style.display = 'none';
     }
 
-    // 3. Reset body overflow (resume.html sets overflow:hidden)
+    // 3. Reset body overflow
     document.body.style.overflow   = '';
     document.body.style.overflowX  = 'hidden';
     document.body.style.overflowY  = '';
