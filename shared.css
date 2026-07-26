@@ -136,6 +136,39 @@ body {
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-logo .logo-short {
+  display: inline-block;
+  opacity: 1;
+  max-width: 50px;
+  overflow: hidden;
+  transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-logo .logo-full {
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease 0.05s;
+  white-space: nowrap;
+}
+
+.nav-logo:hover .logo-short {
+  opacity: 0;
+  max-width: 0;
+}
+
+.nav-logo:hover .logo-full {
+  opacity: 1;
+  max-width: 240px;
 }
 .nav-links { display: flex; align-items: center; gap: 0.25rem; }
 .nav-link {
