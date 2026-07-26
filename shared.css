@@ -387,19 +387,20 @@ p, li { line-height: 1.75; }
 }
 @media (max-width: 900px) {
   .responsive-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
   }
-  /* Move the profile image BELOW text on mobile */
+  /* Place profile image BELOW text & stats on mobile */
   .hero-image-wrap {
-    order: -1;  /* show image above title on small phones */
-    max-width: 260px;
-    margin: 0 auto;
+    order: 2 !important;
+    max-width: 280px !important;
+    margin: 1.75rem auto 1rem !important;
   }
 }
 @media (max-width: 640px) {
   .hero-image-wrap {
-    max-width: 200px;
+    max-width: 280px !important;
   }
 }
 
@@ -517,10 +518,11 @@ p, li { line-height: 1.75; }
 
 @media (max-width: 900px) {
   .hero-image-wrap {
+    order: 2 !important;
     display: flex !important;
     justify-content: center !important;
-    max-width: 290px !important;
-    margin: 1.25rem auto 0.5rem !important;
+    max-width: 280px !important;
+    margin: 1.75rem auto 1rem !important;
     width: 100% !important;
   }
   .profile-card {
