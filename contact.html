@@ -260,14 +260,21 @@ gsap.from('#con-h1',{opacity:0,y:50,duration:.9,delay:.5,ease:'power3.out'});
 function handleSubmit(e) {
   e.preventDefault();
   const btn = document.getElementById('submit-btn');
-  btn.textContent = '<i data-lucide="hourglass" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Sending...';
+  btn.innerHTML = '<i data-lucide="hourglass" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Sending...';
+  if (window.lucide) lucide.createIcons();
   btn.disabled = true;
   setTimeout(() => {
-    btn.textContent = '<i data-lucide="check-circle-2" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Sent!';
+    btn.innerHTML = '<i data-lucide="check-circle-2" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Sent!';
+    if (window.lucide) lucide.createIcons();
     document.getElementById('success-msg').style.display = 'block';
     gsap.from('#success-msg',{opacity:0,y:10,duration:.4});
     document.getElementById('contact-form').reset();
-    setTimeout(()=>{btn.textContent='<i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Send Message';btn.disabled=false;document.getElementById('success-msg').style.display='none';},5000);
+    setTimeout(()=>{
+      btn.innerHTML='<i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i> Send Message';
+      if (window.lucide) lucide.createIcons();
+      btn.disabled=false;
+      document.getElementById('success-msg').style.display='none';
+    },5000);
   }, 1500);
 }
 </script>
