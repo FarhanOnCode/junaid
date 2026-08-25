@@ -1,0 +1,19 @@
+{
+  "name": "Junaid Online — Mohammed Junaid",
+  "short_name": "Junaid Online",
+  "description": "Official website of Mohammed Junaid — digital marketing expert in Hyderabad specialising in SEO, Google Ads and Meta Ads.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0f1e",
+  "theme_color": "#0b0f1e",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/profile.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

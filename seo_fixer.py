@@ -6,7 +6,7 @@ directory = r"c:\Users\Administrator\Desktop\junaid"
 html_files = [f for f in os.listdir(directory) if f.endswith('.html')]
 
 # 1. Create sitemap.xml
-base_url = "https://mohammedjunaid.in/"
+base_url = "https://www.junaidonline.com/"
 sitemap_content = ['<?xml version="1.0" encoding="UTF-8"?>']
 sitemap_content.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
@@ -44,12 +44,12 @@ if os.path.exists(resume_path):
   ═══════════════════════════════════════ -->
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Mohammed Junaid" />
-  <link rel="canonical" href="https://mohammedjunaid.in/resume.html" />
+  <link rel="canonical" href="https://www.junaidonline.com/resume.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mohammedjunaid.in/resume.html" />
+  <meta property="og:url" content="https://www.junaidonline.com/resume.html" />
   <meta property="og:title" content="Resume | Mohammed Junaid — Digital Marketing Expert" />
   <meta property="og:description" content="View and download Mohammed Junaid's digital marketing resume." />
-  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:image" content="https://www.junaidonline.com/profile.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
 """
         resume_html = resume_html.replace('</style>', '</style>\n' + seo_tags)

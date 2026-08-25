@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mohammedjunaid.in/sitemap.xml
+Sitemap: https://www.junaidonline.com/sitemap.xml

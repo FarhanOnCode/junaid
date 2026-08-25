@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <link rel="icon" type="image/jpeg" href="profile.jpeg" />
+  <link rel="apple-touch-icon" href="profile.jpeg" />
+  <link rel="preload" as="image" href="profile.jpeg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads</title>
-  <meta name="description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
+  <title>Junaid Online | Mohammed Junaid — Digital Marketing Expert in Hyderabad</title>
+  <meta name="description" content="Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad specialising in SEO, Google Ads and Meta Ads. 3X avg ROI. 10K+ leads generated." />
   <link rel="stylesheet" href="shared.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -102,6 +104,27 @@
     .profile-card:hover .img-default { opacity: 0 !important; }
     .profile-card:hover .img-hover { opacity: 1 !important; }
     .profile-card:hover { transform: translateY(-10px) rotateY(-5deg) rotateX(5deg); box-shadow:0 30px 90px rgba(168,85,247,0.4) !important; }
+
+    .seo-faq details {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.15rem 1.35rem;
+      margin-bottom: 0.85rem;
+    }
+    .seo-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      list-style: none;
+    }
+    .seo-faq summary::-webkit-details-marker { display: none; }
+    .seo-faq details p {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
   </style>
   <!-- ═══════════════════════════════════════
        SEO META TAGS
@@ -109,45 +132,102 @@
   <!-- Primary Meta -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Mohammed Junaid" />
-  <meta name="keywords" content="Mohammed Junaid, digital marketing expert Hyderabad, SEO specialist, Google Ads expert, Meta Ads, digital marketer portfolio, PPC specialist India" />
-  <link rel="canonical" href="https://mohammedjunaid.in/" />
+  <meta name="copyright" content="Junaid Online — Mohammed Junaid" />
+  <meta name="rating" content="general" />
+  <meta name="keywords" content="Junaid Online, Junaid, Mohammed Junaid, Mohd Junaid, digital marketing expert Hyderabad, SEO specialist, Google Ads expert, Meta Ads, Junaid digital marketer" />
+  <link rel="canonical" href="https://www.junaidonline.com/" />
+  <meta name="theme-color" content="#0b0f1e" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="application-name" content="Junaid Online" />
+  <meta name="apple-mobile-web-app-title" content="Junaid Online" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=yes" />
+  <meta name="geo.region" content="IN-TG" />
+  <meta name="geo.placename" content="Hyderabad" />
+  <meta name="geo.position" content="17.385044;78.486671" />
+  <meta name="ICBM" content="17.385044, 78.486671" />
+  <link rel="alternate" hreflang="en-IN" href="https://www.junaidonline.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.junaidonline.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.junaidonline.com/" />
+  <link rel="manifest" href="https://www.junaidonline.com/site.webmanifest" />
+  <link rel="author" href="https://www.junaidonline.com/humans.txt" />
+  <link rel="me" href="https://www.linkedin.com/in/mohd-junaid-00198435a/" />
+  <link rel="me" href="mailto:mdmohammedjunaid489@gmail.com" />
+  <meta property="og:image:alt" content="Mohammed Junaid — Junaid Online digital marketing expert" />
+  <meta name="twitter:image:alt" content="Mohammed Junaid — Junaid Online digital marketing expert" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mohammedjunaid.in/" />
-  <meta property="og:title" content="Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads" />
-  <meta property="og:description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
-  <meta property="og:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta property="og:url" content="https://www.junaidonline.com/" />
+  <meta property="og:title" content="Junaid Online | Mohammed Junaid — Digital Marketing Expert in Hyderabad" />
+  <meta property="og:description" content="Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad specialising in SEO, Google Ads and Meta Ads. 3X avg ROI. 10K+ leads generated." />
+  <meta property="og:image" content="https://www.junaidonline.com/profile.jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:site_name" content="Mohammed Junaid — Digital Marketing Portfolio" />
+  <meta property="og:site_name" content="Junaid Online — Mohammed Junaid" />
   <meta property="og:locale" content="en_IN" />
+  <meta property="og:locale:alternate" content="en_US" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MohammedJunaid" />
   <meta name="twitter:creator" content="@MohammedJunaid" />
-  <meta name="twitter:title" content="Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads" />
-  <meta name="twitter:description" content="Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated." />
-  <meta name="twitter:image" content="https://mohammedjunaid.in/profile.jpeg" />
+  <meta name="twitter:title" content="Junaid Online | Mohammed Junaid — Digital Marketing Expert in Hyderabad" />
+  <meta name="twitter:description" content="Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad specialising in SEO, Google Ads and Meta Ads. 3X avg ROI. 10K+ leads generated." />
+  <meta name="twitter:image" content="https://www.junaidonline.com/profile.jpeg" />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Mohammed Junaid | Digital Marketing Expert — SEO, Google Ads & Meta Ads",
-    "description": "Mohammed Junaid is a Digital Marketing Expert in Hyderabad specialising in SEO, Google Ads, Meta Ads, email marketing and data-driven growth. 3X avg ROI. 10K+ leads generated.",
-    "url": "https://mohammedjunaid.in/",
-    "author": {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohammed Junaid",
-      "jobTitle": "Digital Marketing Specialist",
-      "url": "https://mohammedjunaid.in",
-      "image": "https://mohammedjunaid.in/profile.jpeg",
-      "email": "mdmohammedjunaid489@gmail.com",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.junaidonline.com/#website",
+      "name": "Junaid Online",
+      "alternateName": [
+        "Mohammed Junaid",
+        "Junaid",
+        "Junaid Online Portfolio"
+      ],
+      "url": "https://www.junaidonline.com/",
+      "description": "Official website of Mohammed Junaid — digital marketing expert in Hyderabad.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://www.junaidonline.com/#brand"
+      },
+      "author": {
+        "@id": "https://www.junaidonline.com/#person"
+      }
+    },
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.junaidonline.com/#brand",
+      "name": "Junaid Online",
+      "alternateName": [
+        "Mohammed Junaid",
+        "Junaid"
+      ],
+      "url": "https://www.junaidonline.com/",
+      "logo": "https://www.junaidonline.com/profile.jpeg",
+      "image": "https://www.junaidonline.com/profile.jpeg",
+      "description": "Junaid Online is the official website and digital marketing practice of Mohammed Junaid in Hyderabad, India.",
+      "founder": {
+        "@id": "https://www.junaidonline.com/#person"
+      },
+      "employee": {
+        "@id": "https://www.junaidonline.com/#person"
+      },
+      "email": "mailto:mdmohammedjunaid489@gmail.com",
       "telephone": "+919000089105",
+      "areaServed": [
+        "IN",
+        "Hyderabad",
+        "India"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Hyderabad",
@@ -155,12 +235,129 @@
         "addressCountry": "IN"
       },
       "sameAs": [
-        "https://www.linkedin.com/in/mohammedjunaid",
-        "https://www.instagram.com/mohammedjunaid"
+        "https://www.linkedin.com/in/mohd-junaid-00198435a/",
+        "https://wa.me/919000089105",
+        "https://www.junaidonline.com/"
       ],
-      "knowsAbout": ["SEO", "Google Ads", "Meta Ads", "Email Marketing", "Social Media Marketing", "Content Marketing", "Digital Marketing"]
+      "priceRange": "$$"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.junaidonline.com/#person",
+      "name": "Mohammed Junaid",
+      "alternateName": [
+        "Junaid",
+        "Junaid Online",
+        "Mohd Junaid",
+        "MD Mohammed Junaid",
+        "Mohammed Junaid Hyderabad"
+      ],
+      "givenName": "Mohammed",
+      "familyName": "Junaid",
+      "jobTitle": "Digital Marketing Expert",
+      "description": "Mohammed Junaid (Junaid Online) is a digital marketing expert in Hyderabad specialising in SEO, Google Ads, Meta Ads and full-funnel growth.",
+      "url": "https://www.junaidonline.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.junaidonline.com/profile.jpeg",
+        "width": 1200,
+        "height": 630,
+        "caption": "Mohammed Junaid — Junaid Online digital marketing expert"
+      },
+      "email": "mailto:mdmohammedjunaid489@gmail.com",
+      "telephone": "+919000089105",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "nationality": "Indian",
+      "sameAs": [
+        "https://www.linkedin.com/in/mohd-junaid-00198435a/",
+        "https://wa.me/919000089105",
+        "https://www.junaidonline.com/"
+      ],
+      "knowsAbout": [
+        "SEO",
+        "Google Ads",
+        "Meta Ads",
+        "Email Marketing",
+        "Social Media Marketing",
+        "Content Marketing",
+        "Digital Marketing",
+        "PPC",
+        "Performance Marketing"
+      ],
+      "worksFor": {
+        "@id": "https://www.junaidonline.com/#brand"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.junaidonline.com/#webpage",
+      "url": "https://www.junaidonline.com/",
+      "name": "Junaid Online | Mohammed Junaid — Digital Marketing Expert in Hyderabad",
+      "description": "Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad specialising in SEO, Google Ads and Meta Ads. 3X avg ROI. 10K+ leads generated.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@id": "https://www.junaidonline.com/#website"
+      },
+      "about": {
+        "@id": "https://www.junaidonline.com/#person"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.junaidonline.com/profile.jpeg"
+      },
+      "breadcrumb": {
+        "@id": "https://www.junaidonline.com/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.junaidonline.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Junaid Online",
+          "item": "https://www.junaidonline.com/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.junaidonline.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Mohammed Junaid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mohammed Junaid, also known as Junaid, is a digital marketing expert based in Hyderabad, India. He specialises in SEO, Google Ads and Meta Ads. His official website is Junaid Online at junaidonline.com."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Junaid Online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Junaid Online is the official website and portfolio of Mohammed Junaid. It showcases his digital marketing work, case studies, certifications and contact details."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Junaid or hire Mohammed Junaid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact Mohammed Junaid via Junaid Online at https://www.junaidonline.com/contact.html, email mdmohammedjunaid489@gmail.com, call +91 90000 89105, or message on WhatsApp."
+          }
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -222,10 +419,11 @@
       <div style="max-width:760px;">
         <div class="floating-badge" style="margin-bottom:1.75rem;">
         <span class="dot"></span>
-        Available for Projects &amp; Collaborations
+        Junaid Online — Official site of Mohammed Junaid
       </div>
 
       <h1 id="hero-title" style="font-size:clamp(2.5rem,6vw,5rem);font-weight:900;line-height:1.08;margin-bottom:1.25rem; max-width: min(800px, 100%);">
+        <span style="display:block;font-size:clamp(0.95rem,2vw,1.2rem);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.85rem;">Mohammed Junaid · Junaid Online</span>
         Turning Clicks into<br>
         <span class="gradient-text">Conversions</span> <i data-lucide="rocket" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit;"></i>
       </h1>
@@ -260,8 +458,8 @@
       <!-- Right Side Profile Pic -->
       <div class="hero-image-wrap reveal" data-delay="0.4" style="position:relative; perspective: 1000px; display:flex; justify-content:center;">
         <div class="profile-card" style="position:relative; width:100%; max-width:580px; aspect-ratio:4/5; border-radius:24px; overflow:hidden; box-shadow:0 24px 80px rgba(168,85,247,0.25); border:1px solid var(--border-glass); transition:transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s; transform-style: preserve-3d; cursor:pointer;">
-          <img src="profile.jpeg" alt="Mohammed Junaid" class="img-default" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; transition:opacity 0.5s;" />
-          <img src="candid.jpeg" alt="Mohammed Junaid Candid" class="img-hover" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity 0.5s;" />
+          <img src="profile.jpeg" alt="Mohammed Junaid — Junaid Online digital marketing expert in Hyderabad" class="img-default" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; transition:opacity 0.5s;" />
+          <img src="candid.jpeg" alt="Mohammed Junaid candid photo — Junaid Online" class="img-hover" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity 0.5s;" />
           <div style="position:absolute; inset:0; border-radius:24px; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events:none;"></div>
           <div style="position:absolute; bottom:0; left:0; right:0; height:40%; background:linear-gradient(to top, rgba(11,15,30,0.8), transparent); pointer-events:none;"></div>
         </div>
@@ -397,6 +595,33 @@
 </section>
 
 <!-- ══════════════════════════════════
+     ABOUT JUNAID ONLINE
+══════════════════════════════════ -->
+<section style="padding:5rem 0;position:relative;z-index:2;" class="seo-faq">
+  <div class="section-wrap">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="section-tag">Junaid Online</span>
+      <h2 class="section-title">Who is <span class="gradient-text">Mohammed Junaid</span>?</h2>
+      <p class="section-sub" style="margin:1rem auto 0;max-width:720px;">Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad known as Junaid.</p>
+    </div>
+    <div style="max-width:780px;margin:0 auto;">
+      <details open class="reveal">
+        <summary>Who is Mohammed Junaid?</summary>
+        <p>Mohammed Junaid, also known as Junaid, is a digital marketing expert based in Hyderabad, India. He specialises in SEO, Google Ads and Meta Ads, and has generated 10K+ leads with a 3X average ROI. His official website is Junaid Online at junaidonline.com.</p>
+      </details>
+      <details class="reveal" data-delay="0.08">
+        <summary>What is Junaid Online?</summary>
+        <p>Junaid Online is the official website and portfolio of Mohammed Junaid. It is the home of his digital marketing work — case studies, skills, certifications, testimonials and contact details — so anyone searching Junaid or Junaid Online can find him here.</p>
+      </details>
+      <details class="reveal" data-delay="0.16">
+        <summary>How can I contact Junaid or hire Mohammed Junaid?</summary>
+        <p>You can hire Mohammed Junaid through the <a href="contact.html" style="color:var(--neon-purple);">Junaid Online contact page</a>, email mdmohammedjunaid489@gmail.com, call +91 90000 89105, or message on WhatsApp. He works with brands in Hyderabad and worldwide.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
      CTA BANNER
 ══════════════════════════════════ -->
 <section style="padding:5rem 0;position:relative;z-index:2;">
@@ -420,9 +645,9 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="index.html" class="nav-logo" style="font-size:1.6rem;">MJ</a>
-      <p>Digital Marketing Enthusiast helping brands grow through data, creativity, and relentless optimization.</p>
+      <p>Junaid Online is the official website of Mohammed Junaid — a digital marketing expert in Hyderabad helping brands grow through data, creativity, and relentless optimization.</p>
       <div class="footer-social" style="margin-top:1.25rem;">
-        <a href="https://www.linkedin.com/in/mohd-junaid-00198435a/" target="_blank" class="social-btn" title="LinkedIn">in</a>
+        <a href="https://www.linkedin.com/in/mohd-junaid-00198435a/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn">in</a>
         <a href="#" class="social-btn" title="Instagram">ig</a>
         <a href="#" class="social-btn" title="Twitter">𝕏</a>
         <a href="https://wa.me/919000089105" class="social-btn" title="WhatsApp">wa</a>
@@ -450,7 +675,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Mohammed Junaid.</span>
+    <span>© 2026 Junaid Online — Mohammed Junaid.</span>
     <span>Built with <i data-lucide="heart" style="width: 1.2em; height: 1.2em; display: inline-block; vertical-align: text-bottom; color: inherit; fill: currentColor;"></i> &amp; data</span>
   </div>
 </footer>
@@ -464,7 +689,8 @@
   gsap.registerPlugin(ScrollTrigger);
 
   // ── Typing animation ─────────────────
-  const phrases = [
+    const phrases = [
+    'Mohammed Junaid · Junaid Online',
     'Digital Marketing Specialist',
     'Google Ads & Meta Ads Expert',
     'SEO & Growth Strategist',

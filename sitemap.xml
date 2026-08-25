@@ -1,51 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mohammedjunaid.in/about.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mohammedjunaid.in/certifications.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mohammedjunaid.in/contact.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mohammedjunaid.in/experience.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mohammedjunaid.in/</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.junaidonline.com/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.junaidonline.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.junaidonline.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.junaidonline.com/" />
+    <image:image>
+      <image:loc>https://www.junaidonline.com/profile.jpeg</image:loc>
+      <image:title>Mohammed Junaid — Junaid Online</image:title>
+      <image:caption>Mohammed Junaid, digital marketing expert and founder of Junaid Online</image:caption>
+    </image:image>
   </url>
   <url>
-    <loc>https://mohammedjunaid.in/projects.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://www.junaidonline.com/about.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://www.junaidonline.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.junaidonline.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.junaidonline.com/about.html" />
+    <image:image>
+      <image:loc>https://www.junaidonline.com/profile.jpeg</image:loc>
+      <image:title>About Mohammed Junaid — Junaid Online</image:title>
+      <image:caption>Portrait of Mohammed Junaid, digital marketing specialist in Hyderabad</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.junaidonline.com/skills.html</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mohammedjunaid.in/skills.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://www.junaidonline.com/projects.html</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mohammedjunaid.in/testimonials.html</loc>
-    <lastmod>2026-07-16</lastmod>
+    <loc>https://www.junaidonline.com/experience.html</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.junaidonline.com/certifications.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.junaidonline.com/testimonials.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.junaidonline.com/contact.html</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
